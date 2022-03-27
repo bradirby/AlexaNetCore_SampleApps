@@ -1,0 +1,32 @@
+﻿{
+	"interactionModel": {
+		"languageModel": {
+			"invocationName": "SampleSkillIntent",
+			"intents": [
+				{
+					"name": "AMAZON.CancelIntent",
+					"samples": [
+						"thank you",
+						"thanks",
+						"cancel",
+						"quit",
+						"excellent"
+					]
+				},
+				{
+					"name": "AMAZON.HelpIntent",
+					"samples": []
+				},
+				{
+					"name": "SampleSkillIntent",
+					"samples": [
+						"I represent the entire world",
+						"Hello from the third planet from the sun",
+						"Hello from planet number three",
+						"Can you say hello"
+					]
+				}
+			]
+		}
+	}
+}
