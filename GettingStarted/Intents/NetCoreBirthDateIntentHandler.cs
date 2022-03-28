@@ -1,11 +1,6 @@
 ﻿using AlexaNetCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AlexaNetCore_GettingStarted.Intents
+namespace AlexaNetCoreGettingStarted.Intents
 {
     public class NetCoreBirthDateIntentHandler : AlexaIntentHandlerBase
     {

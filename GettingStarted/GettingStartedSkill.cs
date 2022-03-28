@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AlexaNetCore;
-using AlexaNetCore_GettingStarted.Intents;
+using AlexaNetCoreGettingStarted.Intents;
 
-namespace AlexaNetCore_GettingStarted
+namespace AlexaNetCoreGettingStarted
 {
     public class GettingStartedSkill : AlexaSkillBase
     {
