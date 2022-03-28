@@ -8,7 +8,7 @@ namespace AlexaNetCoreSampleSkill.Tests
         [Test]
         public void CancelRequest_SaysGoodbye()
         {
-            var skill = new AlexaNetCoreHelloWorldSkill().LoadRequest(GenericSkillRequests.CancelRequest()).ProcessRequest();
+            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.CancelRequest()).ProcessRequest();
             Assert.AreEqual(AlexaOutputSpeechType.PlainText, skill.ResponseEnv.GetOutputSpeech().SpeechType);
             Assert.AreEqual("Ok, canceling", skill.ResponseEnv.GetOutputSpeechText(AlexaLocale.English_US));
         }
@@ -16,7 +16,7 @@ namespace AlexaNetCoreSampleSkill.Tests
         [Test]
         public void CancelRequest_EndsSession()
         {
-            var skill = new AlexaNetCoreHelloWorldSkill().LoadRequest(GenericSkillRequests.CancelRequest()).ProcessRequest();
+            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.CancelRequest()).ProcessRequest();
             Assert.AreEqual(true, skill.ResponseEnv.ShouldEndSession);
         }
 

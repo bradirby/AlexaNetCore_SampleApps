@@ -1,32 +1,39 @@
 ﻿{
 	"interactionModel": {
 		"languageModel": {
-			"invocationName": "SampleSkillIntent",
+			"invocationName": "alexanetcore getting started",
 			"intents": [
 				{
 					"name": "AMAZON.CancelIntent",
-					"samples": [
-						"thank you",
-						"thanks",
-						"cancel",
-						"quit",
-						"excellent"
-					]
+					"samples": []
 				},
 				{
 					"name": "AMAZON.HelpIntent",
 					"samples": []
 				},
 				{
-					"name": "SampleSkillIntent",
+					"name": "AMAZON.StopIntent",
+					"samples": []
+				},
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+					"name": "NetCoreBirthDateIntent",
 					"samples": [
-						"I represent the entire world",
-						"Hello from the third planet from the sun",
-						"Hello from planet number three",
-						"Can you say hello"
+						"How old is dot net core",
+						"what is the age of net core",
+						"how many days has net core been alive",
+						"tell me the number of days dot net core has been on the market"
 					]
 				}
-			]
+			],
+			"types": []
 		}
 	}
 }

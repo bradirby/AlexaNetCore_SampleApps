@@ -9,7 +9,7 @@ namespace AlexaNetCoreSampleSkill.Tests
         [Test]
         public void LaunchRequest_InvokeWithNoIntent_SaysHello()
         {
-            var skill = new AlexaNetCoreHelloWorldSkill().LoadRequest(GenericSkillRequests.LaunchRequest()).ProcessRequest();
+            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.LaunchRequest()).ProcessRequest();
 
             Assert.AreEqual(AlexaOutputSpeechType.PlainText, skill.ResponseEnv.GetOutputSpeech().SpeechType);
             Assert.AreEqual("I Love Alexa Net Core", skill.ResponseEnv.GetOutputSpeechText());
@@ -18,7 +18,7 @@ namespace AlexaNetCoreSampleSkill.Tests
         [Test]
         public void OpenRequest_InvokeWithNoIntent_SaysHello()
         {
-            var skill = new AlexaNetCoreHelloWorldSkill().LoadRequest(GenericSkillRequests.OpenRequest()).ProcessRequest();
+            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.OpenRequest()).ProcessRequest();
 
             Assert.AreEqual(AlexaOutputSpeechType.PlainText, skill.ResponseEnv.GetOutputSpeech().SpeechType);
             Assert.AreEqual("I Love Alexa Net Core", skill.ResponseEnv.GetOutputSpeechText());
@@ -27,7 +27,7 @@ namespace AlexaNetCoreSampleSkill.Tests
         [Test]
         public void StartSession_InvokeWithNoIntent_SaysHello()
         {
-            var skill = new AlexaNetCoreHelloWorldSkill().LoadRequest(GenericSkillRequests.StartSession()).ProcessRequest();
+            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.StartSession()).ProcessRequest();
 
             Assert.AreEqual(AlexaOutputSpeechType.PlainText, skill.ResponseEnv.GetOutputSpeech().SpeechType);
             Assert.AreEqual("I Love Alexa Net Core", skill.ResponseEnv.GetOutputSpeechText());
