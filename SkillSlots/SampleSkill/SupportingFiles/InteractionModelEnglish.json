@@ -1,0 +1,39 @@
+﻿{
+	"interactionModel": {
+		"languageModel": {
+			"invocationName": "alexanetcore birthday echo",
+			"intents": [
+				{
+					"name": "AMAZON.CancelIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.HelpIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.StopIntent",
+					"samples": []
+				},
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+					"name": "BirthDateIntent",
+					"samples": [
+						"How old is dot net core",
+						"what is the age of net core",
+						"how many days has net core been alive",
+						"tell me the number of days dot net core has been on the market"
+					]
+				}
+			],
+			"types": []
+		}
+	}
+}
