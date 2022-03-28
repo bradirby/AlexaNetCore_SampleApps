@@ -1,8 +1,8 @@
 ﻿using System;
 using AlexaNetCore;
-using AlexaNetCoreSampleSkill.Intents;
+using UnitTestingSkill.Intents;
 
-namespace AlexaNetCoreSampleSkill
+namespace UnitTestingSkill
 {
     public class GettingStartedSkill : AlexaSkillBase
     {

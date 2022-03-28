@@ -1,5 +1,7 @@
 ﻿using AlexaNetCore;
 using NUnit.Framework;
+using UnitTestingSkill;
+using UnitTestingSkill.Tests;
 
 namespace AlexaNetCoreSampleSkill.Tests
 {
@@ -9,8 +11,7 @@ namespace AlexaNetCoreSampleSkill.Tests
         public void CancelRequest_SaysGoodbye()
         {
             var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.CancelRequest()).ProcessRequest();
-            Assert.AreEqual(AlexaOutputSpeechType.PlainText, skill.ResponseEnv.GetOutputSpeech().SpeechType);
-            Assert.AreEqual("Ok, canceling", skill.ResponseEnv.GetOutputSpeechText(AlexaLocale.English_US));
+            Assert.AreEqual("OK, canceling.  Thanks for visiting", skill.ResponseEnv.GetOutputSpeechText(AlexaLocale.English_US));
         }
 
         [Test]

@@ -1,18 +1,18 @@
 ﻿using AlexaNetCore;
 using NUnit.Framework;
+using UnitTestingSkill;
+using UnitTestingSkill.Tests;
 
 namespace AlexaNetCoreSampleSkill.Tests
 {
-    public class HowIsTodayRequestTests 
+    public class NetCoreBirthDateIntentTests 
     {
 
         [Test]
         public void EmptyRequest_AsksIfUserNeedsHelp()
         {
             var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.EmptyRequest()).ProcessRequest();
-
-            Assert.AreEqual(AlexaOutputSpeechType.PlainText, skill.ResponseEnv.GetOutputSpeech().SpeechType);
-            Assert.AreEqual("Sure, I can help you with that", skill.ResponseEnv.GetOutputSpeechText(AlexaLocale.English_US));
+            Assert.AreEqual("I haven't added the help yet", skill.ResponseEnv.GetOutputSpeechText());
         }
 
         [Test]
@@ -22,13 +22,7 @@ namespace AlexaNetCoreSampleSkill.Tests
             Assert.AreEqual(false, skill.ResponseEnv.ShouldEndSession);
         }
 
-        [Test]
-        public void EmptyRequest_DoesNotReturnCard()
-        {
-            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.EmptyRequest()).ProcessRequest();
-            Assert.IsNull( skill.ResponseEnv.GetCard());
-        }
-       
+      
 
     }
 }

@@ -1,9 +1,4 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AlexaNetCoreSampleSkill.Tests
+﻿namespace UnitTestingSkill.Tests
 {
 
     /// <summary>
@@ -12,56 +7,7 @@ namespace AlexaNetCoreSampleSkill.Tests
     public class GenericSkillRequests 
     {
         
-        public static string EndSession()
-        {
-            var str = @"
-
-
-{
-  ""version"": ""1.0"",
-  ""session"": {
-    ""new"": false,
-    ""sessionId"": ""amzn1.echo-api.session.123456789012"",
-    ""application"": {
-      ""applicationId"": ""amzn1.ask.skill.111111111""
-    },
-    ""attributes"": {},
-    ""user"": {
-      ""userId"": ""amzn1.ask.account.testUser""
-    }
-  },
-  ""context"": {
-    ""System"": {
-      ""application"": {
-        ""applicationId"": ""amzn1.ask.skill.111111111""
-      },
-      ""user"": {
-        ""userId"": ""amzn1.ask.account.testUser""
-      },
-      ""device"": {
-        ""supportedInterfaces"": {
-          ""AudioPlayer"": {}
-        }
-      }
-    }
-  },
-  ""request"": {
-    ""type"": ""SessionEndedRequest"",
-    ""requestId"": ""amzn1.echo-api.request.1234"",
-    ""timestamp"": ""2016-10-27T21:11:41Z"",
-    ""locale"": ""en-US"",
-    ""reason"": ""USER_INITIATED""
-  }
-}
-
-
-";
-            return str;
-
-        }
-
-       
-        public static string OpenRequest()
+        public static string LaunchRequest()
         {
             var str = @"
 
@@ -70,13 +16,13 @@ namespace AlexaNetCoreSampleSkill.Tests
 	""version"": ""1.0"",
 	""session"": {
 		""new"": true,
-		""sessionId"": ""amzn1.echo-api.session.4bb67e53-b3c9-475c-8ab7-e9531e6ea695"",
+		""sessionId"": ""amzn1.echo-api.session.ac1f7d2e-c387-4101-a671-0c4e90cca2be"",
 		""application"": {
-			""applicationId"": ""amzn1.ask.skill.11111111-1111-1111-1111-111111111111""
+			""applicationId"": ""amzn1.ask.skill.5d4eca0f-6700-465e-9a59-375cb713f10e""
 		},
 		""attributes"": {},
 		""user"": {
-			""userId"": ""amzn1.ask.account.AFG3JGSPJ3VPHNA""
+			""userId"": ""amzn1.ask.account.AFS66GQ7L5RWCMWP3OL6722IS57N6QXW4AXJURZYAA6TCK7DJDRPDIPPKDNGIWQBHNPCC5RAAYE56LZOFOAB45SWGPTRNG32KCAMRN2UHBYBKQF43ZZNYUUHLYC2Q3ES3IS36IOD3FJFUKSO6NV6GMLN2PPZ2TV7V7XBYKUYI44D5VM6DOCOJDN55QANVI4SDCN3QYWR7LOCECI""
 		}
 	},
 	""context"": {
@@ -139,28 +85,27 @@ namespace AlexaNetCoreSampleSkill.Tests
 		},
 		""System"": {
 			""application"": {
-				""applicationId"": ""amzn1.ask.skill.11111111-1111-1111-1111-111111111111""
+				""applicationId"": ""amzn1.ask.skill.5d4eca0f-6700-465e-9a59-375cb713f10e""
 			},
 			""user"": {
-				""userId"": ""amzn1.ask.account.AFGETGN2WSE6YICNNRJUR3F5TZZJJZTR67TSL4YURMMJXJC3KTUFXKXHNECKRRD3UQUANBDRAF526CL5FTY6AD7BQRZAXMNF4DSXCYVVZAJHICSGCBTRZXCM4ARPC2WMH4OGOETJKE6KMK6KDI6LNHFW5M3QIHWHX577IOK7OMZGYZL25WKB7PZZKIJF3DLOATI3JGSPJ3VPHNA""
+				""userId"": ""amzn1.ask.account.AFS66GQ7L5RWCMWP3OL6722IS57N6QXW4AXJURZYAA6TCK7DJDRPDIPPKDNGIWQBHNPCC5RAAYE56LZOFOAB45SWGPTRNG32KCAMRN2UHBYBKQF43ZZNYUUHLYC2Q3ES3IS36IOD3FJFUKSO6NV6GMLN2PPZ2TV7V7XBYKUYI44D5VM6DOCOJDN55QANVI4SDCN3QYWR7LOCECI""
 			},
 			""device"": {
-				""deviceId"": ""amzn1.ask.device.AEHABLPXX35CQ5BP6M4I2BO345GDAEOGMUMMK3PABJMKRGZ4LVLTHOWFYB766NM64UICB4RUWMR5UQAK5BZORMAJ2NFWVQ5KHM6HGAGFFJQSRDXZMXGGF6NA5XLKDITSXZNBEYBXRNP743RXZC6SSHP2EM6Q"",
+				""deviceId"": ""amzn1.ask.device.AFWOBHH4AOT3SZE2G7DGHMVPP54Z36KJOVAPLGSWQEZT2EHYJIDWINVG2ZBNL6UUG2CISII4AIVJ3A5L3AXK2U42VVPHOJTMALR4MDPV5GEWRQQ2ZXY5SKZLDY3RGPJHQ4BQY52IW5YFZHOQWMIAXXSBMIWQ"",
 				""supportedInterfaces"": {}
 			},
 			""apiEndpoint"": ""https://api.amazonalexa.com"",
-			""apiAccessToken"": ""eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjgzMjNjNDMzLTdkYjctNDRiMi05N2MxLTExMjZmNWNmYzVmNSIsImV4cCI6MTYzMjMxNzUxMSwiaWF0IjoxNjMyMzE3MjExLCJuYmYiOjE2MzIzMTcyMTEsInByaXZhdGVDbGFpbXMiOnsiY29udGV4dCI6IkFBQUFBQUFBQUFETCsrdTN2Q2tzeTd5ZFMvTFRjbXc1SkFFQUFBQUFBQUMxa3RiYlpvLzgyRC9LOVhRUHJSN01ZTjUxVHd3V242M0FRQkV1Z2N5VnhXYWRMNTJQU0NnSXJVQnBLMmNPWDcxYmVXdHhiYWpROXpPekpST0tmYnVnL1ExU2pYTjB0cXhUSDcwdDJvMFNlSjN6dFNDZTczK2FBYXZEOXlMZ2R0OGNnbDBPaGI0YkFkSkk0TGo5UkxTUS9zMU1YaXR6TlhZc0RrdCt4RUE0WFlrYlRLQVhUZ3I5TUhuZjNWRXNPR0JHY0FuaXJEc05SdzV0NmJ5b1lCclRIY3hNdGZHNW1LWk91T2owQk9DM3l3ZzdwRWg5Q3B4ODJNYVBtSkpUNWNwWFR3eG1FNDN2YTZwQTZEcVg3R2xZb1RyQXhlN1VqUHFZclVxNkNuRC9GTkJtNXRYN2lQZFlRUkN2ZjBjUzl3RU1kNmRUK0I1cjZHTzloTjhOT1VHRzZ3cnh4TjRDUnd0WXV2K1hKSWVpK0NieHhBTHE3VHZjZGc5RHUvYnB5VVR1TlJTNyIsImNvbnNlbnRUb2tlbiI6bnVsbCwiZGV2aWNlSWQiOiJhbXpuMS5hc2suZGV2aWNlLkFFSEFCTFBYWDM1Q1E1QlA2TTRJMkJPMzQ1R0RBRU9HTVVNTUszUEFCSk1LUkdaNExWTFRIT1dGWUI3NjZOTTY0VUlDQjRSVVdNUjVVUUFLNUJaT1JNQUoyTkZXVlE1S0hNNkhHQUdGRkpRU1JEWFpNWEdHRjZOQTVYTEtESVRTWFpOQkVZQlhSTlA3NDNSWFpDNlNTSFAyRU02USIsInVzZXJJZCI6ImFtem4xLmFzay5hY2NvdW50LkFGR0VUR04yV1NFNllJQ05OUkpVUjNGNVRaWkpKWlRSNjdUU0w0WVVSTU1KWEpDM0tUVUZYS1hITkVDS1JSRDNVUVVBTkJEUkFGNTI2Q0w1RlRZNkFEN0JRUlpBWE1ORjREU1hDWVZWWkFKSElDU0dDQlRSWlhDTTRBUlBDMldNSDRPR09FVEpLRTZLTUs2S0RJNkxOSEZXNU0zUUlIV0hYNTc3SU9LN09NWkdZWkwyNVdLQjdQWlpLSUpGM0RMT0FUSTNKR1NQSjNWUEhOQSJ9fQ.ZtG75-XR7UFlQXKZ0j0X9NOES6M5KBvhoc8H4vEJb1zo2D5NqfL0gjsb3E_wIilJeLdNu5Qc2yY79cL9ugKwOSWSW7OS5xx4tE1GvNjRTo0j27rDCNnXArdFpb0ZoAnky3vOiqp3ralbtWXzxbhF33YHVakQaEV75t3OLvCeHf78C2MoqqlqSrCvn_WSVBoWv8Nh9O80T0X3IhwR808YBdTVYsPevAmEp5GIaNLo7lgjGeenLVlJaanxK7g3WcIhWudMTVFRcyo3iYmGXS0B-JjixdTm2I6p2omZTsoYWN_xT8v6gVqRUujk-uX5LLbrg8EY6THPJ4yqGDkhc9-ljQ""
+			""apiAccessToken"": ""eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjVkNGVjYTBmLTY3MDAtNDY1ZS05YTU5LTM3NWNiNzEzZjEwZSIsImV4cCI6MTY0ODQ3MDIwMiwiaWF0IjoxNjQ4NDY5OTAyLCJuYmYiOjE2NDg0Njk5MDIsInByaXZhdGVDbGFpbXMiOnsiY29udGV4dCI6IkFBQUFBQUFBQUFEeHdzOXpDQVV6OTczS2s0MS9HWVd3SkFFQUFBQUFBQUFwVnZsUitOVzRsQ0w0WWJZZFpOdHhwZjVHeDVsWHFPcFJWcnhvRDlNSkpRM042UlV3UVJzUGhnYlFTUXhMZGdXNUV5MUV4NE5GbDV6TW9WSlRLNTFkOFYvWTcrWWdWbVI3cWw2SXhUdFdEQnRXZ0Vhc2NXUzhjQ3pHSjVhUGlmclJSNXloNGZsdFh0NVdnaFQwQXhLcXFNdkNWd3JySS8xUmZPYU8xNFVIQWwwMld4SFREcUhyMWpPbG5mWXZYTkFkWHFzUk0zeWpGbFdPbFJsVXdaMnh6MTlCb2JEY0VUaGZDbnZYekRZLzdrUDhiUlNrM3hSVm9PS1E5TXpQSkplcjJ2a25SMitNR3V0aGpWWEhkZXFjRzVzdHo5ZmdsOHlzc29VdnovOWE5NitxVmZlcHRlNWpmRURnd0thakoxWndQNUlHNWc3c2xiYjIwZGJFNEtZS1l6eDU4TmVVVG1ybVhJRi9JZFo2QStkOXN1K1hRNHRsNXByM3RlUUJDRUZ6ZTA3NyIsImNvbnNlbnRUb2tlbiI6bnVsbCwiZGV2aWNlSWQiOiJhbXpuMS5hc2suZGV2aWNlLkFGV09CSEg0QU9UM1NaRTJHN0RHSE1WUFA1NFozNktKT1ZBUExHU1dRRVpUMkVIWUpJRFdJTlZHMlpCTkw2VVVHMkNJU0lJNEFJVkozQTVMM0FYSzJVNDJWVlBIT0pUTUFMUjRNRFBWNUdFV1JRUTJaWFk1U0taTERZM1JHUEpIUTRCUVk1MklXNVlGWkhPUVdNSUFYWFNCTUlXUSIsInVzZXJJZCI6ImFtem4xLmFzay5hY2NvdW50LkFGUzY2R1E3TDVSV0NNV1AzT0w2NzIySVM1N042UVhXNEFYSlVSWllBQTZUQ0s3REpEUlBESVBQS0ROR0lXUUJITlBDQzVSQUFZRTU2TFpPRk9BQjQ1U1dHUFRSTkczMktDQU1STjJVSEJZQktRRjQzWlpOWVVVSExZQzJRM0VTM0lTMzZJT0QzRkpGVUtTTzZOVjZHTUxOMlBQWjJUVjdWN1hCWUtVWUk0NEQ1Vk02RE9DT0pETjU1UUFOVkk0U0RDTjNRWVdSN0xPQ0VDSSJ9fQ.KEHrJRFs8wqQ4oB4NF2tx_3C5t1iMuGRScWo4fNVKw1mPFYkrPMsgy7ZQG-YxhPt4DpV_CLvF40nkfvdbBozsZT44q6NQEm0lmkqc8jAQHNwYXjeM7mDQS9WV8q_3gu1qB-7suVEuNrenmjqwXIlA27oBgcgpbKj5SREmKY_lHb301PUdqsd5n_jIvDplas9crJortYWhpPaVaTNPo87H_9diTsDMUzNtrs9r4Yi9GkvmbzyxdNYWL-MB0mAub_qGbgiGu1QPot5m0CY4rl2_Bojgz7Vt7AqFju2ewMaBcd8OCK8wIZWwvfol_PlF0STcBKKwmI0lII2XQ4io6S7IA""
 		}
 	},
 	""request"": {
 		""type"": ""LaunchRequest"",
-		""requestId"": ""amzn1.echo-api.request.813cd910-36a7-4127-8d82-632f41a07bce"",
-		""locale"": ""en-IN"",
-		""timestamp"": ""2021-09-22T13:26:51Z"",
+		""requestId"": ""amzn1.echo-api.request.4dd5a615-a781-4b4c-8402-a8be031199a1"",
+		""locale"": ""en-US"",
+		""timestamp"": ""2022-03-28T12:18:23Z"",
 		""shouldLinkResultBeReturned"": false
 	}
 }
-
 
 "
                 ;
@@ -405,7 +350,7 @@ namespace AlexaNetCoreSampleSkill.Tests
         }
 
     
-        public static string LaunchRequest()
+        public static string LaunchRequestOld()
         {
             var str = @"
 
@@ -544,6 +489,55 @@ namespace AlexaNetCoreSampleSkill.Tests
             return str;
 
         }
+
+        public static string EndSession()
+        {
+            var str = @"
+
+
+{
+  ""version"": ""1.0"",
+  ""session"": {
+    ""new"": false,
+    ""sessionId"": ""amzn1.echo-api.session.123456789012"",
+    ""application"": {
+      ""applicationId"": ""amzn1.ask.skill.111111111""
+    },
+    ""attributes"": {},
+    ""user"": {
+      ""userId"": ""amzn1.ask.account.testUser""
+    }
+  },
+  ""context"": {
+    ""System"": {
+      ""application"": {
+        ""applicationId"": ""amzn1.ask.skill.111111111""
+      },
+      ""user"": {
+        ""userId"": ""amzn1.ask.account.testUser""
+      },
+      ""device"": {
+        ""supportedInterfaces"": {
+          ""AudioPlayer"": {}
+        }
+      }
+    }
+  },
+  ""request"": {
+    ""type"": ""SessionEndedRequest"",
+    ""requestId"": ""amzn1.echo-api.request.1234"",
+    ""timestamp"": ""2016-10-27T21:11:41Z"",
+    ""locale"": ""en-US"",
+    ""reason"": ""USER_INITIATED""
+  }
+}
+
+
+";
+            return str;
+
+        }
+
 
 
     }

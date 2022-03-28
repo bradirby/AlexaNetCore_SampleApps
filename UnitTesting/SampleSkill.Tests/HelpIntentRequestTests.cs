@@ -1,5 +1,7 @@
 ﻿using AlexaNetCore;
 using NUnit.Framework;
+using UnitTestingSkill;
+using UnitTestingSkill.Tests;
 
 namespace AlexaNetCoreSampleSkill.Tests
 {
@@ -7,17 +9,21 @@ namespace AlexaNetCoreSampleSkill.Tests
     {
 
         [Test]
-        public void InvalidIntentName_ReturnsHelpText()
+        public void HelpRequest_ProcessedByCorrectIntentHandler()
         {
             var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.HelpRequest()).ProcessRequest();
-
-            Assert.AreEqual(AlexaOutputSpeechType.PlainText, skill.ResponseEnv.GetOutputSpeech().SpeechType);
             Assert.AreEqual("DefaultHelpIntentHandler", skill.ResponseEnv.IntentHandlerName);
-            Assert.AreEqual("Sure, I can help you with that", skill.ResponseEnv.GetOutputSpeechText());
         }
 
         [Test]
-        public void InvalidIntentName_DoesNotEndSession()
+        public void HelpRequest_ReturnsHelpText()
+        {
+            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.HelpRequest()).ProcessRequest();
+            Assert.AreEqual("I haven't added the help yet", skill.ResponseEnv.GetOutputSpeechText());
+        }
+
+        [Test]
+        public void HelpRequest_DoesNotEndSession()
         {
             var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.HelpRequest()).ProcessRequest();
             Assert.AreEqual(false, skill.ResponseEnv.ShouldEndSession);

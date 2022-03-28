@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Reflection.Metadata;
 using System.Text;
 
-namespace AlexaNetCoreSampleSkill.Intents
+namespace UnitTestingSkill.Intents
 {
     public class NetCoreBirthDateIntentHandler : AlexaIntentHandlerBase
     {
