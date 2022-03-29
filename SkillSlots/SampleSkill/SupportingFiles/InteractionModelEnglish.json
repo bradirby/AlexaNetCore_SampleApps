@@ -1,7 +1,7 @@
 ﻿{
 	"interactionModel": {
 		"languageModel": {
-			"invocationName": "alexanetcore birthday echo",
+			"invocationName": "alexanetcore skill slots",
 			"intents": [
 				{
 					"name": "AMAZON.CancelIntent",
