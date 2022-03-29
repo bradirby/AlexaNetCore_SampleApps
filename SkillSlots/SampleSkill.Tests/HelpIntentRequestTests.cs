@@ -11,21 +11,21 @@ namespace SkillSlots.Tests
         [Test]
         public void HelpRequest_ProcessedByCorrectIntentHandler()
         {
-            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.HelpRequest()).ProcessRequest();
+            var skill = new BirthdayEchoSkill().LoadRequest(GenericSkillRequests.HelpRequest()).ProcessRequest();
             Assert.AreEqual("DefaultHelpIntentHandler", skill.ResponseEnv.IntentHandlerName);
         }
 
         [Test]
         public void HelpRequest_ReturnsHelpText()
         {
-            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.HelpRequest()).ProcessRequest();
-            Assert.AreEqual("I haven't added the help yet", skill.ResponseEnv.GetOutputSpeechText());
+            var skill = new BirthdayEchoSkill().LoadRequest(GenericSkillRequests.HelpRequest()).ProcessRequest();
+            Assert.AreEqual("Just tell me your birthday and I will echo it back to you", skill.ResponseEnv.GetOutputSpeechText());
         }
 
         [Test]
         public void HelpRequest_DoesNotEndSession()
         {
-            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.HelpRequest()).ProcessRequest();
+            var skill = new BirthdayEchoSkill().LoadRequest(GenericSkillRequests.HelpRequest()).ProcessRequest();
             Assert.AreEqual(false, skill.ResponseEnv.ShouldEndSession);
         }
 

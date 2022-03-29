@@ -9,7 +9,7 @@ namespace SkillSlots.Tests
         [Test]
         public void LaunchRequest_InvokeWithNoIntent_SaysHello()
         {
-            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.LaunchRequest()).ProcessRequest();
+            var skill = new BirthdayEchoSkill().LoadRequest(GenericSkillRequests.LaunchRequest()).ProcessRequest();
             Assert.AreEqual("I Love Alexa Net Core", skill.ResponseEnv.GetOutputSpeechText());
         }
       

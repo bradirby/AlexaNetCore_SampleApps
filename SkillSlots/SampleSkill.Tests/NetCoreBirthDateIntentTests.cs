@@ -11,14 +11,14 @@ namespace SkillSlots.Tests
         [Test]
         public void EmptyRequest_AsksIfUserNeedsHelp()
         {
-            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.EmptyRequest()).ProcessRequest();
-            Assert.AreEqual("I haven't added the help yet", skill.ResponseEnv.GetOutputSpeechText());
+            var skill = new BirthdayEchoSkill().LoadRequest(GenericSkillRequests.EmptyRequest()).ProcessRequest();
+            Assert.AreEqual("Just tell me your birthday and I will echo it back to you", skill.ResponseEnv.GetOutputSpeechText());
         }
 
         [Test]
         public void EmptyRequest_DoesNotEndSession()
         {
-            var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.EmptyRequest()).ProcessRequest();
+            var skill = new BirthdayEchoSkill().LoadRequest(GenericSkillRequests.EmptyRequest()).ProcessRequest();
             Assert.AreEqual(false, skill.ResponseEnv.ShouldEndSession);
         }
 
