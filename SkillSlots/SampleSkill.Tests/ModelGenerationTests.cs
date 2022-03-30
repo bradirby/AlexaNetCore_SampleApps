@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Text.Json;
+using AlexaNetCore;
 using NUnit.Framework;
 
 namespace SkillSlots.Tests
@@ -17,13 +18,15 @@ namespace SkillSlots.Tests
         [Explicit]
         public void CreateInteractionModelFile()
         {
-            var skill = new BirthdayEchoSkill();
-            var interactionModelObj = skill.GetInteractionModel();
-            var interactionModelStr = JsonSerializer.Serialize(interactionModelObj);
-
             var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSampleProjectSkillSlots");
-            filePath = Path.Combine(filePath, "SampleSkill\\SupportingFiles\\InteractionModelEnglish.json");
-            File.WriteAllText(filePath, interactionModelStr);
+            filePath = Path.Combine(filePath, "SampleSkill\\SupportingFiles\\InteractionModels");
+
+
+            var skill = new BirthdayEchoSkill();
+
+            var locale = AlexaLocale.English_US;
+            File.WriteAllText(Path.Combine(filePath, $"{locale.LocaleString}.json"), 
+                JsonSerializer.Serialize(skill.GetInteractionModel(locale)));
         }
     }
 }

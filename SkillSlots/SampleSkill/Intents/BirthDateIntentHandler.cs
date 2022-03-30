@@ -1,21 +1,17 @@
 ﻿using AlexaNetCore;
-using DistanceLibrary;
 using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata;
-using System.Text;
 
 namespace SkillSlots.Intents
 {
     public class BirthDateIntentHandler : AlexaIntentHandlerBase
     {
 
-        /// <summary>
-        /// There is a default console logger built in which ties in with AWS logging.
-        /// This logger can be replaced with any logger that implements IAlexaNetCoreMessageLogger if you would like to build your own.
-        /// </summary>
-        public BirthDateIntentHandler() : base("SampleSkillIntent")
+        public BirthDateIntentHandler() : base("BirthDateIntent")
         {
+            AddSlotOption("bday", "AMAZON.DATE");
+
+            AddSampleInvocation("My birthday is {bday}");
+            AddSampleInvocation("I was born on {bday}");
         }
 
         public override void Process()

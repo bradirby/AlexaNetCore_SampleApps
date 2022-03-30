@@ -10,7 +10,7 @@ namespace SkillSlots
         public BirthdayEchoSkill() : base()
         {
             SetSkillVersion("0.1");
-            InvocationName = "birthday echo";
+            SetInvocationName("birthday echo");
             RegisterIntentHandler(new DefaultLaunchIntentHandler("I Love Alexa Net Core"));
             RegisterIntentHandler(new DefaultStopIntentHandler("OK, stopping.  Thanks for visiting"));
             RegisterIntentHandler(new DefaultCancelIntentHandler("OK, canceling.  Thanks for visiting"));

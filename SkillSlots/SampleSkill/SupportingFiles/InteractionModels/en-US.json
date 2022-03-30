@@ -1,0 +1,42 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "birthday echo",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "BirthDateIntent",
+          "slots": [
+            {
+              "name": "bday",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "samples": [
+            "My birthday is {bday}",
+            "I was born on {bday}"
+          ]
+        }
+      ]
+    }
+  }
+}

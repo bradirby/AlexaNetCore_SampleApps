@@ -1,1 +1,0 @@
-{"interactionModel":{"languageModel":{"invocationName":"birthday echo","intents":[{"name":"LaunchRequest","samples":[]},{"name":"AMAZON.StopIntent","samples":[]},{"name":"AMAZON.CancelIntent","samples":[]},{"name":"AMAZON.HelpIntent","samples":[]},{"name":"AMAZON.FallbackIntent","samples":[]},{"name":"SampleSkillIntent","samples":[]}]}}}
