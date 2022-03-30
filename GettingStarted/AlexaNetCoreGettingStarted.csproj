@@ -12,8 +12,8 @@
     <PublishReadyToRun>true</PublishReadyToRun>	  
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AlexaNetCore" Version="0.6.0.4" />
+    <PackageReference Include="AlexaNetCore" Version="0.6.0.12" />
     <PackageReference Include="Amazon.Lambda.Core" Version="2.1.0" />
-    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.2.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.0" />
   </ItemGroup>
 </Project>
