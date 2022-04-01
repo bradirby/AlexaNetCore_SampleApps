@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using AlexaNetCore;
 using NUnit.Framework;
+using SlotChecker;
 
 namespace SkillSlots.Tests
 {
@@ -22,7 +23,7 @@ namespace SkillSlots.Tests
             filePath = Path.Combine(filePath, "SampleSkill\\SupportingFiles\\InteractionModels");
 
 
-            var skill = new BirthdayEchoSkill();
+            var skill = new SlotCheckerSkill();
 
             var locale = AlexaLocale.English_US;
             File.WriteAllText(Path.Combine(filePath, $"{locale.LocaleString}.json"), 

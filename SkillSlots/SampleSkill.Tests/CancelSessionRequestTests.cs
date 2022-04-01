@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using SkillSlots;
 using SkillSlots.Tests;
+using SlotChecker;
 
 namespace SkillSlots.Tests
 {
@@ -10,14 +11,14 @@ namespace SkillSlots.Tests
         [Test]
         public void CancelRequest_SaysGoodbye()
         {
-            var skill = new BirthdayEchoSkill().LoadRequest(GenericSkillRequests.CancelRequest()).ProcessRequest();
-            Assert.AreEqual("OK, canceling.  Thanks for visiting", skill.ResponseEnv.GetOutputSpeechText(AlexaLocale.English_US));
+            var skill = new SlotCheckerSkill().LoadRequest(GenericSkillRequests.CancelRequest()).ProcessRequest();
+            Assert.AreEqual("OK, Canceling", skill.ResponseEnv.GetOutputSpeechText(AlexaLocale.English_US));
         }
 
         [Test]
         public void CancelRequest_EndsSession()
         {
-            var skill = new BirthdayEchoSkill().LoadRequest(GenericSkillRequests.CancelRequest()).ProcessRequest();
+            var skill = new SlotCheckerSkill().LoadRequest(GenericSkillRequests.CancelRequest()).ProcessRequest();
             Assert.AreEqual(true, skill.ResponseEnv.ShouldEndSession);
         }
 

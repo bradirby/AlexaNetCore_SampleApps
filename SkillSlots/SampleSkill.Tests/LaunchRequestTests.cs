@@ -1,5 +1,6 @@
 ﻿using AlexaNetCore;
 using NUnit.Framework;
+using SlotChecker;
 
 namespace SkillSlots.Tests
 {
@@ -9,8 +10,8 @@ namespace SkillSlots.Tests
         [Test]
         public void LaunchRequest_InvokeWithNoIntent_SaysHello()
         {
-            var skill = new BirthdayEchoSkill().LoadRequest(GenericSkillRequests.LaunchRequest()).ProcessRequest();
-            Assert.AreEqual("I Love Alexa Net Core", skill.ResponseEnv.GetOutputSpeechText());
+            var skill = new SlotCheckerSkill().LoadRequest(GenericSkillRequests.LaunchRequest()).ProcessRequest();
+            Assert.AreEqual("Welcome to slot value checker", skill.ResponseEnv.GetOutputSpeechText());
         }
       
 
