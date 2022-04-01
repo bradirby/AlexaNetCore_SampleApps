@@ -12,7 +12,7 @@ namespace AlexaNetCoreSampleSkill.Tests
         public void HelpRequest_ProcessedByCorrectIntentHandler()
         {
             var skill = new GettingStartedSkill().LoadRequest(GenericSkillRequests.HelpRequest()).ProcessRequest();
-            Assert.AreEqual("DefaultHelpIntentHandler", skill.ResponseEnv.IntentHandlerName);
+            Assert.AreEqual(AlexaBuiltInIntents.HelpIntent, skill.ResponseEnv.IntentHandlerName);
         }
 
         [Test]
