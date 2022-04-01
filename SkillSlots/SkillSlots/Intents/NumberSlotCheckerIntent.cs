@@ -48,7 +48,7 @@ namespace SlotChecker.Intents
         {
             var arr = str.ToCharArray();
             var result = String.Join(" ", arr);
-            result = result.Replace(" - ", " dash ");  //this reads better coming from the Echo
+            result = result.Replace("-", " negative ");  //this reads better coming from the Echo
             return result;
         }
 

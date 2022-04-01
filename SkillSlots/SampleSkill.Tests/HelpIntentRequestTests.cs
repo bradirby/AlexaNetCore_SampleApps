@@ -16,12 +16,7 @@ namespace SkillSlots.Tests
             Assert.AreEqual(AlexaBuiltInIntents.HelpIntent, skill.ResponseEnv.IntentHandlerName);
         }
 
-        [Test]
-        public void HelpRequest_ReturnsHelpText()
-        {
-            var skill = new SlotCheckerSkill().LoadRequest(GenericSkillRequests.HelpRequest()).ProcessRequest();
-            Assert.AreEqual("you got slot checker help", skill.ResponseEnv.GetOutputSpeechText());
-        }
+     
 
         [Test]
         public void HelpRequest_DoesNotEndSession()

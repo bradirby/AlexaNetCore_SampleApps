@@ -9,12 +9,7 @@ namespace SkillSlots.Tests
     public class NetCoreBirthDateIntentTests 
     {
 
-        [Test]
-        public void EmptyRequest_AsksIfUserNeedsHelp()
-        {
-            var skill = new SlotCheckerSkill().LoadRequest(GenericSkillRequests.EmptyRequest()).ProcessRequest();
-            Assert.AreEqual("you got slot checker help", skill.ResponseEnv.GetOutputSpeechText());
-        }
+      
 
         [Test]
         public void EmptyRequest_DoesNotEndSession()
