@@ -18,7 +18,7 @@ namespace SlotChecker.Tests
             skill.LoadRequest(SkillSubmissionRequests.LaunchRequest()).ProcessRequest();
 
             Assert.AreEqual(false, skill.ResponseEnv.ShouldEndSession);
-            Assert.AreEqual("Welcome to slot value checker", skill.ResponseEnv.GetOutputSpeechText());
+            Assert.AreEqual("LaunchRequest", skill.ResponseEnv.IntentHandlerName);
         }
 
       
@@ -71,7 +71,7 @@ namespace SlotChecker.Tests
             Assert.AreEqual(false, s.ResponseEnv.ShouldEndSession);
             Assert.AreEqual(AlexaOutputSpeechType.PlainText, s.ResponseEnv.GetOutputSpeech().SpeechType);
             Assert.IsFalse(string.IsNullOrEmpty(s.ResponseEnv.GetOutputSpeechText()));
-            Assert.AreEqual("you got slot checker help", s.ResponseEnv.GetOutputSpeechText());
+            Assert.AreEqual(AlexaBuiltInIntents.HelpIntent, s.ResponseEnv.IntentHandlerName);
         }
 
       
