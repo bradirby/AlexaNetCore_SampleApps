@@ -20,7 +20,7 @@ namespace SkillSlots.Tests
         public void CreateInteractionModelFile()
         {
             var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSampleProjectSkillSlots");
-            filePath = Path.Combine(filePath, "SampleSkill\\SupportingFiles\\InteractionModels");
+            filePath = Path.Combine(filePath, "SkillSlots\\SupportingFiles\\InteractionModels");
 
 
             var skill = new SlotCheckerSkill();

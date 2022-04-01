@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SampleSkill\SkillSlots.csproj" />
+    <ProjectReference Include="..\SkillSlots\SlotChecker.csproj" />
   </ItemGroup>
 
 </Project>
