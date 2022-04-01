@@ -39,8 +39,8 @@ namespace SlotChecker
             SetSkillVersion("0.1");
             SetInvocationName("slot value checker");
 
-            RegisterIntentHandler(new DefaultCancelIntentHandler("OK, Canceling"));
-            RegisterIntentHandler(new DefaultStopIntentHandler("OK, Stopping"));
+            RegisterIntentHandler(new DefaultCancelIntentHandler("OK, Canceling slot checker"));
+            RegisterIntentHandler(new DefaultStopIntentHandler("OK, Stopping slot checker"));
             RegisterIntentHandler(new DefaultHelpIntentHandler("you got slot checker help"));
             RegisterIntentHandler(new DefaultLaunchIntentHandler("Welcome to slot value checker"));
             RegisterIntentHandler(new DefaultStartOverIntentHandler("From the top; Welcome to slot value checker"));

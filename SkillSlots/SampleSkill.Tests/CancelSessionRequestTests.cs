@@ -12,7 +12,7 @@ namespace SkillSlots.Tests
         public void CancelRequest_SaysGoodbye()
         {
             var skill = new SlotCheckerSkill().LoadRequest(GenericSkillRequests.CancelRequest()).ProcessRequest();
-            Assert.AreEqual("OK, Canceling", skill.ResponseEnv.GetOutputSpeechText(AlexaLocale.English_US));
+            Assert.AreEqual("OK, Canceling slot checker", skill.ResponseEnv.GetOutputSpeechText(AlexaLocale.English_US));
         }
 
         [Test]
