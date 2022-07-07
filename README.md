@@ -1,7 +1,7 @@
 # AlexaNetCore_SampleApps
 Set of sample apps demonstrating how AlexaNetCore works.  In this repository you can find 
-* [link](https://github.com/bradirby/AlexaNetCore_SampleApps/tree/main/src/HelloWorldcom "HelloWorld") - how to get a Hello World project up and running.  This goes
-along with the [link](https://www.alexanetcore.com/getting-started/ "Instructions on our site")
+* [HelloWorld](https://github.com/bradirby/AlexaNetCore_SampleApps/tree/main/src/HelloWorldcom ) - how to get a Hello World project up and running.  This goes
+along with the [Instructions on our site](https://www.alexanetcore.com/getting-started/ )
 * Inernationalization - Demonstrates how easy it is to support multiple languages in large and small projects
 * Slots - How to use Alexa built in slots to get user input into your skill
 * CustomSlots - How to define your own slots and values to get user input
