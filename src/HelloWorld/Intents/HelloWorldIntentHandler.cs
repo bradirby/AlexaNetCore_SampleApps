@@ -5,19 +5,18 @@ namespace AlexaNetCore.ZeroToHero.HelloWorld
 {
     public class HelloWorldIntentHandler : AlexaIntentHandlerBase
     {
-        public HelloWorldIntentHandler() : base(AlexaIntentType.Custom,SkillConstants.IntentNames.HelloWorldIntentHandler)
+        public HelloWorldIntentHandler() : base(AlexaIntentType.Custom,"HelloWorldIntentHandler")
         {
-            AddSampleInvocation("Say Hello");
-            AddSampleInvocation("Tell me hello");
-            AddSampleInvocation("I want to hear you say hello");
+            AddSampleInvocation("How old is Dot Net Core");
+            AddSampleInvocation("When was Dot Net Core born");
         }
 
         public override Task ProcessAsync()
         {
             try
             {
-                Speak($"Hello, you crazy world!");
-                Reprompt("Are you still hanging on out there?");
+                var numDaysOld = (DateTime.Today - new DateTime(2016, 6, 27)).TotalDays;
+                Speak($"Dot Net Core is {numDaysOld} days old today");
             }
             catch (Exception)
             {

@@ -15,10 +15,10 @@ namespace AlexaNetCore.ZeroToHero.HelloWorld
         /// </summary>
         public async Task<string> FunctionHandler(AlexaRequestEnvelope input)
         {
-            return (await new HelloWorldSkill()
-                .LoadRequest(input)
-                .ProcessRequestAsync())
-                .GetResponse();
+            var skill = new HelloWorldSkill();
+            skill.LoadRequest(input);
+            await skill.ProcessRequestAsync();
+            return skill.GetResponse();
         }
     }
 }

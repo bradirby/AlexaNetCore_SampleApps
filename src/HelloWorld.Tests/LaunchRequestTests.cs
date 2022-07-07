@@ -14,7 +14,7 @@ namespace AlexaNetCore.ZeroToHero.HelloWorld.Tests
             skill.LoadRequest(BuiltInIntentQueries.LaunchRequest);
             await skill.ProcessRequestAsync();
 
-            Assert.AreEqual("Welcome to your first skill.  You can say 'Tell me Hello' or 'i want to hear you say hello'.  Do you want to give it a try?",
+            Assert.AreEqual("I Love Alexa Net Core. Try saying 'How old is Dot Net Core' or 'When was Dot Net born'",
                 skill.GetSpokenText());
         }
 

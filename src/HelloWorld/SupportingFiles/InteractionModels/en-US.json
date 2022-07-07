@@ -1,1 +1,41 @@
-{"interactionModel":{"languageModel":{"invocationName":"zero to hero test","intents":[{"name":"AMAZON.CancelIntent","samples":[]},{"name":"AMAZON.FallbackIntent","samples":[]},{"name":"AMAZON.HelpIntent","samples":[]},{"name":"AMAZON.NavigateHomeIntent","samples":[]},{"name":"AMAZON.StopIntent","samples":[]},{"name":"HelloWorldIntentHandler","samples":["Say Hello","Tell me hello","I want to hear you say hello"]}]}}}
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "alexanetcore hello world",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "HelloWorldIntentHandler",
+          "samples": [
+            "How old is Dot Net Core",
+            "When was Dot Net Core born"
+          ]
+        }
+      ]
+    }
+  }
+}

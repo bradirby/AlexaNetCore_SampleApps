@@ -7,14 +7,14 @@ namespace AlexaNetCore.ZeroToHero.HelloWorld
         public HelloWorldSkill()
         {
             SetSkillVersion("0.1.0");
-            SetInvocationName("zero to hero test");
+            SetInvocationName("alexanetcore hello world");
 
-            RegisterIntentHandler(new DefaultLaunchIntentHandler("Welcome to your first skill.  You can say 'Tell me Hello' or 'i want to hear you say hello'.  Do you want to give it a try?"));
+            RegisterIntentHandler(new DefaultLaunchIntentHandler("I Love Alexa Net Core. Try saying 'How old is Dot Net Core' or 'When was Dot Net born'"));
 
             RegisterIntentHandler(new HelloWorldIntentHandler());
 
 
-            RegisterIntentHandler(new DefaultHelpIntentHandler("You can say 'Tell Me Hello' or 'i want to hear you say hello'.  Give it a try"));
+            RegisterIntentHandler(new DefaultHelpIntentHandler("You can say 'How old is Dot Net Core' or 'When was Dot Net born'.  Give it a try"));
 
             RegisterIntentHandler(new DefaultNavigateHomeIntentHandler("OK, Navigating home"));
             RegisterIntentHandler(new DefaultCancelIntentHandler("OK, Cancelling"));

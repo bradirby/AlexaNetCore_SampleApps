@@ -17,9 +17,9 @@ namespace AlexaNetCore.ZeroToHero.HelloWorld.Tests
         [Explicit]
         public void CreateInteractionModelFile()
         {
-            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSourceCodeRootFolder");
+            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSampleAppsRootFolder");
             filePath ??= "";
-            filePath = Path.Combine(filePath, "Samples\\Zero2Hero\\Step01_HelloWorld\\SupportingFiles\\InteractionModels");
+            filePath = Path.Combine(filePath, "HelloWorld\\SupportingFiles\\InteractionModels");
 
             var skill = new HelloWorldSkill();
             

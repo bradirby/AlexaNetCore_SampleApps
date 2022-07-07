@@ -13,7 +13,7 @@ public class HelpRequestTests
         skill.LoadRequest(BuiltInIntentQueries.HelpRequest);
         await skill.ProcessRequestAsync();
 
-        Assert.AreEqual("You can say 'Tell Me Hello' or 'i want to hear you say hello'.  Give it a try", 
+        Assert.AreEqual("You can say 'How old is Dot Net Core' or 'When was Dot Net born'.  Give it a try", 
             skill.GetSpokenText());
     }
 
