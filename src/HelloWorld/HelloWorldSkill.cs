@@ -7,7 +7,7 @@ namespace AlexaNetCore.ZeroToHero.HelloWorld
         public HelloWorldSkill()
         {
             SetSkillVersion("0.1.0");
-            SetInvocationName("alexanetcore hello world");
+            SetInvocationName("alexanetcore getting started");
 
             RegisterIntentHandler(new DefaultLaunchIntentHandler("I Love Alexa Net Core. Try saying 'How old is Dot Net Core' or 'When was Dot Net born'"));
 
