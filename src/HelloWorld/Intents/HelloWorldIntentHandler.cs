@@ -1,5 +1,4 @@
 ﻿using AlexaNetCore.Model;
-using AlexaNetCore.ZeroToHero.HelloWorld.SupportingFiles;
 
 namespace AlexaNetCore.ZeroToHero.HelloWorld
 {

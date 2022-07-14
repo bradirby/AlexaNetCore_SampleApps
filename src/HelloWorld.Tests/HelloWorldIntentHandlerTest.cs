@@ -18,7 +18,7 @@ namespace AlexaNetCore.ZeroToHero.HelloWorld.Tests
             skill.LoadRequest(HelloWorldSampleQueries.TellMeHello);
             await skill.ProcessRequestAsync();
 
-            Assert.AreEqual("Dot Net Core is 2201 days old today", skill.GetSpokenText());
+            Assert.IsTrue( skill.GetSpokenText().StartsWith("Dot Net Core is "));
         }
 
 

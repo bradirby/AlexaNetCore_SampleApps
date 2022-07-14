@@ -18,9 +18,9 @@ namespace AlexaNetCore.ZeroToHero.Interceptors.Tests
         [Explicit]
         public void CreateInteractionModelFile()
         {
-            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSourceCodeRootFolder");
+            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSampleAppSourceCodeRootFolder");
             filePath ??= "";
-            filePath = Path.Combine(filePath, "Samples\\Zero2Hero\\Step03_Interceptors\\SupportingFiles\\InteractionModels");
+            filePath = Path.Combine(filePath, "Interceptors\\SupportingFiles\\InteractionModels");
 
             var skill = new InterceptorSkill();
             

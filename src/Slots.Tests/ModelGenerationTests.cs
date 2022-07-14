@@ -17,9 +17,9 @@ namespace AlexaNetCore.ZeroToHero.Slots.Tests
         [Explicit]
         public void CreateInteractionModelFile()
         {
-            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSourceCodeRootFolder");
+            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSampleAppSourceCodeRootFolder");
             filePath ??= "";
-            filePath = Path.Combine(filePath, "Samples\\Zero2Hero\\Step05_Slots\\SupportingFiles\\InteractionModels");
+            filePath = Path.Combine(filePath, "Slots\\SupportingFiles\\InteractionModels");
 
             var skill = new SlotCheckerSkill();
             

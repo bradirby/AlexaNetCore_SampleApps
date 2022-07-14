@@ -1,1 +1,52 @@
-{"interactionModel":{"languageModel":{"invocationName":"zero to hero test","intents":[{"name":"AMAZON.CancelIntent","samples":[]},{"name":"AMAZON.FallbackIntent","samples":[]},{"name":"AMAZON.HelpIntent","samples":[]},{"name":"AMAZON.NavigateHomeIntent","samples":[]},{"name":"AMAZON.StopIntent","samples":[]},{"name":"SimpleCardIntent","samples":["Show me a card","I want to see a card","Give me a card","Show me something"]},{"name":"StandardCardIntent","samples":["Show me a standard card","Show me a card with an image","I want to see an image","Show me the image"]}]}}}
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "zero to hero test",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "SimpleCardIntent",
+          "samples": [
+            "Show me a card",
+            "I want to see a card",
+            "Give me a card",
+            "Show me something"
+          ]
+        },
+        {
+          "name": "StandardCardIntent",
+          "samples": [
+            "Show me a standard card",
+            "Show me a card with an image",
+            "I want to see an image",
+            "Show me the image"
+          ]
+        }
+      ]
+    }
+  }
+}
