@@ -17,9 +17,9 @@ namespace AlexaNetCore.ZeroToHero.MultiturnDialog.Tests
         [Explicit]
         public void CreateInteractionModelFile()
         {
-            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSourceCodeRootFolder");
+            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSampleAppSourceCodeRootFolder");
             filePath ??= "";
-            filePath = Path.Combine(filePath, "Samples\\Zero2Hero\\MultiturnDialog\\SupportingFiles\\InteractionModels");
+            filePath = Path.Combine(filePath, "MultiturnDialog\\SupportingFiles\\InteractionModels");
 
             var skill = new MultiturnDialogSkill();
             

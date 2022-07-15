@@ -17,9 +17,9 @@ namespace AlexaNetCore.ZeroToHero.Session.Tests
         [Explicit]
         public void CreateInteractionModelFile()
         {
-            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSourceCodeRootFolder");
+            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSampleAppSourceCodeRootFolder");
             filePath ??= "";
-            filePath = Path.Combine(filePath, "Samples\\Zero2Hero\\Step08_Session\\SupportingFiles\\InteractionModels");
+            filePath = Path.Combine(filePath, "Session\\SupportingFiles\\InteractionModels");
 
             var skill = new SessionDemoSkill();
             

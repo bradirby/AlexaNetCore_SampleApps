@@ -13,7 +13,7 @@ public class CancelRequestTests
     public async Task SetsSpokenText()
     {
         var skill = new HelloWorldSkill();
-        skill.LoadRequest(BuiltInIntentQueries.CancelRequest);
+        skill.LoadRequest(HelloWorldSampleQueries.CancelIntent);
         await skill.ProcessRequestAsync();
 
         Assert.AreEqual("OK, Cancelling", skill.GetSpokenText());
@@ -23,7 +23,7 @@ public class CancelRequestTests
     public async Task HasNoRepromptText()
     {
         var skill = new HelloWorldSkill();
-        skill.LoadRequest(BuiltInIntentQueries.CancelRequest);
+        skill.LoadRequest(HelloWorldSampleQueries.CancelIntent);
         await skill.ProcessRequestAsync();
         
         Assert.IsTrue(string.IsNullOrWhiteSpace(skill.GetRepromptText()));
@@ -33,7 +33,7 @@ public class CancelRequestTests
     public async Task ClosesSession()
     {
         var skill = new HelloWorldSkill();
-        skill.LoadRequest(BuiltInIntentQueries.CancelRequest);
+        skill.LoadRequest(HelloWorldSampleQueries.CancelIntent);
         await skill.ProcessRequestAsync();
         
         Assert.AreEqual(true, skill.ShouldEndSession);

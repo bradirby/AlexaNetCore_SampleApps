@@ -10,7 +10,7 @@ public class HelpRequestTests
     public async Task SetsSpokenText()
     {
         var skill = new HelloWorldSkill();
-        skill.LoadRequest(BuiltInIntentQueries.HelpRequest);
+        skill.LoadRequest(HelloWorldSampleQueries.HelpIntent);
         await skill.ProcessRequestAsync();
 
         Assert.AreEqual("You can say 'How old is Dot Net Core' or 'When was Dot Net born'.  Give it a try", 
@@ -23,7 +23,7 @@ public class HelpRequestTests
     public async Task KeepsSessionOpen()
     {
         var skill = new HelloWorldSkill();
-        skill.LoadRequest(BuiltInIntentQueries.HelpRequest);
+        skill.LoadRequest(HelloWorldSampleQueries.HelpIntent);
         await skill.ProcessRequestAsync();
 
         Assert.AreEqual(false, skill.ShouldEndSession);

@@ -17,7 +17,7 @@ namespace AlexaNetCore.ZeroToHero.HelloWorld.Tests
         [Explicit]
         public void CreateInteractionModelFile()
         {
-            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSampleAppsRootFolder");
+            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSampleAppSourceCodeRootFolder");
             filePath ??= "";
             filePath = Path.Combine(filePath, "HelloWorld\\SupportingFiles\\InteractionModels");
 

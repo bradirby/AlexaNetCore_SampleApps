@@ -11,7 +11,7 @@ public class StopRequestTests
     public async Task SetsSpokenText()
     {
         var skill = new HelloWorldSkill();
-        skill.LoadRequest(BuiltInIntentQueries.StopRequest);
+        skill.LoadRequest(HelloWorldSampleQueries.StopIntent);
         await skill.ProcessRequestAsync();
 
         Assert.AreEqual("Ok, stopping", skill.GetSpokenText());
@@ -21,7 +21,7 @@ public class StopRequestTests
     public async Task HasNoRepromptText()
     {
         var skill = new HelloWorldSkill();
-        skill.LoadRequest(BuiltInIntentQueries.StopRequest);
+        skill.LoadRequest(HelloWorldSampleQueries.StopIntent);
         await skill.ProcessRequestAsync();
 
         Assert.IsTrue(string.IsNullOrWhiteSpace(skill.GetRepromptText()));
@@ -31,7 +31,7 @@ public class StopRequestTests
     public async Task ClosesSession()
     {
         var skill = new HelloWorldSkill();
-        skill.LoadRequest(BuiltInIntentQueries.StopRequest);
+        skill.LoadRequest(HelloWorldSampleQueries.StopIntent);
         await skill.ProcessRequestAsync();
 
         Assert.AreEqual(true, skill.ShouldEndSession);

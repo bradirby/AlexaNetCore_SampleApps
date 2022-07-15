@@ -17,9 +17,9 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         [Explicit]
         public void CreateInteractionModelFile()
         {
-            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSourceCodeRootFolder");
+            var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSampleAppSourceCodeRootFolder");
             filePath ??= "";
-            filePath = Path.Combine(filePath, "Samples\\Zero2Hero\\Step02_Internationalization\\SupportingFiles\\InteractionModels");
+            filePath = Path.Combine(filePath, "Internationalization\\SupportingFiles\\InteractionModels");
 
             var skill = new InternationalizationSkill();
             
