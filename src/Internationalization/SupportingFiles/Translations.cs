@@ -82,9 +82,10 @@ namespace AlexaNetCore.ZeroToHero.Internationalization
 
 
         public static AlexaMultiLanguageText SkillInvocation => 
-            new AlexaMultiLanguageText("Hi and Welcome to the Internationalization Sample", AlexaLocale.English_US)
-                .AddText("Ciao e benvenuto nell'esempio di internazionalizzazione", AlexaLocale.Italian)
-                .AddText("Hola y Bienvenidos a la Muestra de Internacionalización", AlexaLocale.Spanish_ES);
+            new AlexaMultiLanguageText("alexanetcore internationalization test", AlexaLocale.English_US)
+                .AddText("alexanetcore prova di internazionalizzazione", AlexaLocale.Italian)
+                .AddText("alexanetcore prueba de internacionalización", AlexaLocale.Spanish_ES);
+
 
         public static class IntentInvocations
         {

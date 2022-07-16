@@ -13,7 +13,7 @@ public class CancelRequestTests
     public async Task DefaultLanguage_SetsSpokenText()
     {
         var skill = await new InternationalizationSkill()
-            .LoadRequest(BuiltInIntentQueries.CancelRequest)
+            .LoadRequest(IntlSampleQueries.CancelIntent)
             .ProcessRequestAsync();
         Assert.AreEqual("Goodbye", skill.GetSpokenText());
     }
@@ -24,7 +24,7 @@ public class CancelRequestTests
     {
         var skill = await new InternationalizationSkill()
             .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Italian), 1000)
-            .LoadRequest(BuiltInIntentQueries.CancelRequest)
+            .LoadRequest(IntlSampleQueries.CancelIntent)
             .ProcessRequestAsync();
 
         Assert.AreEqual("Arrivederci", skill.GetSpokenText());
@@ -39,7 +39,7 @@ public class CancelRequestTests
     public async Task DefaultLanguage_SetsRepromptText()
     {
         var skill = await new InternationalizationSkill()
-            .LoadRequest(BuiltInIntentQueries.CancelRequest)
+            .LoadRequest(IntlSampleQueries.CancelIntent)
             .ProcessRequestAsync();
 
         Assert.IsTrue(string.IsNullOrEmpty( skill.GetRepromptText()));
@@ -51,7 +51,7 @@ public class CancelRequestTests
     {
         var skill = await new InternationalizationSkill()
             .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Italian), 1000)
-            .LoadRequest(BuiltInIntentQueries.CancelRequest)
+            .LoadRequest(IntlSampleQueries.CancelIntent)
             .ProcessRequestAsync();
         Assert.IsTrue(string.IsNullOrEmpty( skill.GetRepromptText()));
     }
@@ -66,7 +66,7 @@ public class CancelRequestTests
     public async Task KeepsSessionOpen()
     {
         var skill = await new InternationalizationSkill()
-            .LoadRequest(BuiltInIntentQueries.CancelRequest)
+            .LoadRequest(IntlSampleQueries.CancelIntent)
             .ProcessRequestAsync();
         Assert.AreEqual(true, skill.ShouldEndSession);
     }

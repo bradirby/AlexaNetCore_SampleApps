@@ -17,6 +17,8 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         [Explicit]
         public void CreateInteractionModelFile()
         {
+            //set this filepath to where you want the integration model JSON to be written
+            //it's convenient to use an environment setting so the project can be shared easily with others
             var filePath = Environment.GetEnvironmentVariable("AlexaNetCoreSampleAppSourceCodeRootFolder");
             filePath ??= "";
             filePath = Path.Combine(filePath, "Internationalization\\SupportingFiles\\InteractionModels");

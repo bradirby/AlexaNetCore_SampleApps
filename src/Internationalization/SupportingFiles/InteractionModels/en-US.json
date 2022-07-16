@@ -1,1 +1,40 @@
-{"interactionModel":{"languageModel":{"invocationName":"zero to hero test","intents":[{"name":"AMAZON.CancelIntent","samples":[]},{"name":"AMAZON.FallbackIntent","samples":[]},{"name":"AMAZON.HelpIntent","samples":[]},{"name":"AMAZON.NavigateHomeIntent","samples":[]},{"name":"AMAZON.StopIntent","samples":[]},{"name":"IntlIntentHandler","samples":["what languages are you trained with"]}]}}}
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "alexanetcore internationalization test",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "IntlIntentHandler",
+          "samples": [
+            "what languages are you trained with"
+          ]
+        }
+      ]
+    }
+  }
+}
