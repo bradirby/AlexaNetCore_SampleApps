@@ -15,27 +15,9 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         public async Task IntlIntent_English()
         {
             var skill = await new InternationalizationSkill()
-                .LoadRequest(InternationalizationSampleQueries.WhatLanguagesTrained_English)
+                .LoadRequest(IntlSampleQueries.WhatLanguagesTrained)
                 .ProcessRequestAsync();
             Assert.AreEqual("I can speak English! Also Spanish and Italian.", skill.GetSpokenText());
-        }
-
-        [Test]
-        public async Task IntlIntent_Spanish()
-        {
-            var skill = await new InternationalizationSkill()
-                .LoadRequest(InternationalizationSampleQueries.WhatLanguagesTrained_Spanish)
-                .ProcessRequestAsync();
-            Assert.AreEqual("Hablo ingles, espanol y italiano.", skill.GetSpokenText());
-        }
-
-        [Test]
-        public async Task IntlIntent_Italian()
-        {
-            var skill = await new InternationalizationSkill()
-                .LoadRequest(InternationalizationSampleQueries.WhatLanguagesTrained_Italian)
-                .ProcessRequestAsync();
-            Assert.AreEqual("Parlo inglese, spagnolo e italiano", skill.GetSpokenText());
         }
 
 

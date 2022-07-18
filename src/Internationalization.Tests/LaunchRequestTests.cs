@@ -13,7 +13,7 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         public async Task DefaultLanguage_ReturnsProperTextString()
         {
             var skill = await new InternationalizationSkill()
-                .LoadRequest(BuiltInIntentQueries.LaunchRequest)
+                .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
             Assert.AreEqual("Welcome, say 'what languages are you trained with'.",
                 skill.GetSpokenText());
@@ -25,7 +25,7 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         {
             var skill = await new InternationalizationSkill()
                 .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Italian), 1000)
-                .LoadRequest(BuiltInIntentQueries.LaunchRequest)
+                .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
 
             Assert.AreEqual("Benvenuto, dì 'in quali lingue ti sei formato'?",
@@ -37,7 +37,7 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         {
             var skill = await new InternationalizationSkill()
                 .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Spanish_ES), 1000)
-                .LoadRequest(BuiltInIntentQueries.LaunchRequest)
+                .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
 
             Assert.AreEqual("Bienvenido, diga 'en qué idiomas está entrenado'?",
@@ -51,7 +51,7 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         public async Task DefaultLanguage_SetsRepromptText()
         {
             var skill = await new InternationalizationSkill()
-                .LoadRequest(BuiltInIntentQueries.LaunchRequest)
+                .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
             Assert.AreEqual("Did you need some help?", skill.GetRepromptText());
         }
@@ -62,7 +62,7 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         {
             var skill = await new InternationalizationSkill()
                 .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Italian), 1000)
-                .LoadRequest(BuiltInIntentQueries.LaunchRequest)
+                .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
 
             Assert.AreEqual("Avevi bisogno di aiuto?", skill.GetRepromptText());
@@ -73,7 +73,7 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         {
             var skill = await new InternationalizationSkill()
                 .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Spanish_ES), 1000)
-                .LoadRequest(BuiltInIntentQueries.LaunchRequest)
+                .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
 
             Assert.AreEqual("Necesitabas ayuda?", skill.GetRepromptText());
@@ -87,7 +87,7 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         public async Task KeepsSessionOpen()
         {
             var skill = await new InternationalizationSkill()
-                .LoadRequest(BuiltInIntentQueries.LaunchRequest)
+                .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
             Assert.AreEqual(false, skill.ShouldEndSession);
         }
