@@ -13,7 +13,7 @@ namespace AlexaNetCore.ZeroToHero.Interceptors.Tests
         {
             var skill = await new InterceptorSkill()
                 .RegisterRequestInterceptor(new SetUserIdDebugInterceptor("jeff"), 100)  //set the userid for testing
-                .LoadRequest(BuiltInIntentQueries.LaunchRequest)
+                .LoadRequest(InterceptorSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
 
             Assert.AreEqual("Jeff Bezos", skill.GetResponseSessionValue(SkillConstants.SessionAttributeNames.Username, ""));

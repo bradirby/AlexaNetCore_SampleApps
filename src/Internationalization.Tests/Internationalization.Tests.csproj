@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Internationalization\Internationalization.csproj" />
-    <ProjectReference Include="..\Zero2HeroUtil\Zero2HeroUtil.csproj" />
   </ItemGroup>
 
 </Project>

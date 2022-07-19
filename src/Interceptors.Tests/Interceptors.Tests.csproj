@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Interceptors\Interceptors.csproj" />
-    <ProjectReference Include="..\Zero2HeroUtil\Zero2HeroUtil.csproj" />
   </ItemGroup>
 
 </Project>

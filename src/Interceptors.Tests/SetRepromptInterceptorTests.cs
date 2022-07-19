@@ -10,7 +10,7 @@ public class SetRepromptInterceptorTests
     public async Task SetRepromptInterceptor_LaunchRequest_DoesNotOverwriteExistingReprompt()
     {
         var skill = await new InterceptorSkill()
-            .LoadRequest(BuiltInIntentQueries.LaunchRequest)
+            .LoadRequest(InterceptorSampleQueries.LaunchRequest)
             .ProcessRequestAsync();
         Assert.AreEqual("The interceptors are running, are you still there?", skill.GetRepromptText());
     }
@@ -20,7 +20,7 @@ public class SetRepromptInterceptorTests
     public async Task SetRepromptInterceptor_CancelRequest_DoesNotAddReprompt()
     {
         var skill = await new InterceptorSkill()
-            .LoadRequest(BuiltInIntentQueries.CancelRequest)
+            .LoadRequest(InterceptorSampleQueries.CancelIntent)
             .ProcessRequestAsync();
         Assert.AreEqual("", skill.GetRepromptText());
     }
@@ -29,7 +29,7 @@ public class SetRepromptInterceptorTests
     public async Task SetRepromptInterceptor_HelpRequest_AddsGenericReprompt()
     {
         var skill = await new InterceptorSkill()
-            .LoadRequest(BuiltInIntentQueries.HelpRequest)
+            .LoadRequest(InterceptorSampleQueries.HelpIntent)
             .ProcessRequestAsync();
         Assert.AreEqual("This is the injected reprompt.", skill.GetRepromptText());
     }
