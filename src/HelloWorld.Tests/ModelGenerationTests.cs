@@ -24,8 +24,12 @@ namespace AlexaNetCore.ZeroToHero.HelloWorld.Tests
             var skill = new HelloWorldSkill();
             
             var locale = AlexaLocale.English_US;
-            File.WriteAllText(Path.Combine(filePath, $"{locale.LocaleString}.json"), 
-                JsonSerializer.Serialize(skill.ValidateInteractionModel(locale).GetInteractionModel(locale)));
+
+            skill.ValidateInteractionModel(locale);
+
+            var model = skill.GetInteractionModel(locale);
+
+            File.WriteAllText(Path.Combine(filePath, $"{locale.LocaleString}.json"), JsonSerializer.Serialize(model));
 
         }
     }

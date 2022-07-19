@@ -1,1 +1,41 @@
-{"interactionModel":{"languageModel":{"invocationName":"alexanetcore getting started","intents":[{"name":"AMAZON.CancelIntent","samples":[]},{"name":"AMAZON.FallbackIntent","samples":[]},{"name":"AMAZON.HelpIntent","samples":[]},{"name":"AMAZON.NavigateHomeIntent","samples":[]},{"name":"AMAZON.StopIntent","samples":[]},{"name":"HelloWorldIntentHandler","samples":["How old is Dot Net Core","When was Dot Net Core born"]}]}}}
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "alexanetcore getting started",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "HelloWorldIntentHandler",
+          "samples": [
+            "How old is Dot Net Core",
+            "When was Dot Net Core born"
+          ]
+        }
+      ]
+    }
+  }
+}
