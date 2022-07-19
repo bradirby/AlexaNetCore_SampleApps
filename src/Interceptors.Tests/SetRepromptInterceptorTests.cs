@@ -34,9 +34,5 @@ public class SetRepromptInterceptorTests
         Assert.AreEqual("This is the injected reprompt.", skill.GetRepromptText());
     }
 
-
-
-
-
 }
 
