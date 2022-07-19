@@ -2,7 +2,6 @@
 using AlexaNetCore;
 using NUnit.Framework;
 using System.Threading.Tasks;
-using AlexaNetCore.ZeroToHero.Util;
 
 namespace AlexaNetCore.ZeroToHero.Slots.Tests
 {
@@ -14,7 +13,6 @@ namespace AlexaNetCore.ZeroToHero.Slots.Tests
         {
             var skill = await new SlotCheckerSkill()
                 .LoadRequest(DateSlotCheckerQueries.Spring())
-                .RegisterResponseInterceptor(new ResponseValidationDebugInterceptor(), 1000 )
                 .ProcessRequestAsync();
 
             Assert.AreEqual(SkillConstants.IntentNames.DateSlotChecker, skill.ChosenIntent.IntentName);
@@ -27,7 +25,6 @@ namespace AlexaNetCore.ZeroToHero.Slots.Tests
         {
             var skill = await new SlotCheckerSkill()
                 .LoadRequest(DateSlotCheckerQueries.NineteenNineties())
-                .RegisterResponseInterceptor(new ResponseValidationDebugInterceptor(), 1000 )
                 .ProcessRequestAsync();
 
             Assert.AreEqual(SkillConstants.IntentNames.DateSlotChecker, skill.ChosenIntent.IntentName);
@@ -40,7 +37,6 @@ namespace AlexaNetCore.ZeroToHero.Slots.Tests
         {
             var skill = await new SlotCheckerSkill()
                 .LoadRequest(DateSlotCheckerQueries.ThisYear())
-                .RegisterResponseInterceptor(new ResponseValidationDebugInterceptor(),  1000 )
                 .ProcessRequestAsync();
 
             Assert.AreEqual(SkillConstants.IntentNames.DateSlotChecker, skill.ChosenIntent.IntentName);
@@ -53,7 +49,6 @@ namespace AlexaNetCore.ZeroToHero.Slots.Tests
         {
             var skill = await new SlotCheckerSkill()
                 .LoadRequest(DateSlotCheckerQueries.January())
-                .RegisterResponseInterceptor(new ResponseValidationDebugInterceptor() , 1000)
                 .ProcessRequestAsync();
 
             Assert.AreEqual(SkillConstants.IntentNames.DateSlotChecker, skill.ChosenIntent.IntentName);
@@ -66,7 +61,6 @@ namespace AlexaNetCore.ZeroToHero.Slots.Tests
         {
             var skill = await new SlotCheckerSkill()
                 .LoadRequest(DateSlotCheckerQueries.NextWeekEnd())
-                .RegisterResponseInterceptor(new ResponseValidationDebugInterceptor(), 1000 )
                 .ProcessRequestAsync();
 
             Assert.AreEqual(SkillConstants.IntentNames.DateSlotChecker, skill.ChosenIntent.IntentName);
@@ -79,7 +73,6 @@ namespace AlexaNetCore.ZeroToHero.Slots.Tests
         {
             var skill = await new SlotCheckerSkill()
                 .LoadRequest(DateSlotCheckerQueries.AskForThisWeek())
-                .RegisterResponseInterceptor(new ResponseValidationDebugInterceptor(), 1000 )
                 .ProcessRequestAsync();
 
             Assert.AreEqual(SkillConstants.IntentNames.DateSlotChecker, skill.ChosenIntent.IntentName);
@@ -93,7 +86,6 @@ namespace AlexaNetCore.ZeroToHero.Slots.Tests
             //what date values do you get for april 4 as your input value
             var skill = await new SlotCheckerSkill()
                 .LoadRequest(DateSlotCheckerQueries.AskForAprilFourth())
-                .RegisterResponseInterceptor(new ResponseValidationDebugInterceptor(), 1000 )
                 .ProcessRequestAsync();
 
             Assert.AreEqual(SkillConstants.IntentNames.DateSlotChecker, skill.ChosenIntent.IntentName);
@@ -107,7 +99,6 @@ namespace AlexaNetCore.ZeroToHero.Slots.Tests
             //what date values do you get for april 4 as your input value
             var skill = await new SlotCheckerSkill()
                 .LoadRequest(DateSlotCheckerQueries.AskForAprilFirstAndSeptemberFifth())
-                .RegisterResponseInterceptor(new ResponseValidationDebugInterceptor(), 1000 )
                 .ProcessRequestAsync();
 
             Assert.AreEqual(SkillConstants.IntentNames.DateSlotChecker, skill.ChosenIntent.IntentName);
