@@ -8,7 +8,7 @@ along with the [Instructions on our site](https://www.alexanetcore.com/getting-s
 * CustomSlots - How to define your own slots and values to get user input
 * DynamicEntities - Make your custom slot values change options depending on who is using your skill
 * Cards - for users that have a device with a screen, you can show messages on the screen
-* Interceptors - how to pre-process the request coming from Amazon, or post-process the response to add standard info in a generic way
+* [Interceptors](https://www.alexanetcore.com/interceptors/) - how to pre-process the request coming from Amazon, or post-process the response to add standard info in a generic way
 * Session - How to save information from one skill interaction to the next
 
 

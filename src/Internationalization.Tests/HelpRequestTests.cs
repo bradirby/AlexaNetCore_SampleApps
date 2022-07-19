@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using System.Threading.Tasks;
 using AlexaNetCore.Model;
-using AlexaNetCore.ZeroToHero.Util;
+using Internationalization.Tests;
 
 namespace AlexaNetCore.ZeroToHero.Internationalization.Tests;
 
