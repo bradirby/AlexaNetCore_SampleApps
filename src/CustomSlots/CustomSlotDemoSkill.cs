@@ -9,7 +9,7 @@ namespace AlexaNetCore.ZeroToHero.CustomSlots
         public CustomSlotDemoSkill()
         {
             SetSkillVersion("0.3.0");
-            SetInvocationName("zero to hero test");
+            SetInvocationName("alexanetcore custom slot demo");
 
             this.AddMonthNameSlot( SkillConstants.SlotTypes.MonthNameSlotType);
             this.AddCarNameSlot(SkillConstants.SlotTypes.CarNameSlotType);

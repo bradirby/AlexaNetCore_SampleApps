@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AlexaNetCore.ZeroToHero.Slots
+﻿namespace Slots.SupportingFiles
 {
     /// <summary>
     /// A constant class that keeps all the slot names.
@@ -14,11 +8,11 @@ namespace AlexaNetCore.ZeroToHero.Slots
     {
         public class SlotNames
         {
+            public static string FourDigitNumSlotName => "fourDigitNumSlot";
             public static string ActorSlotName => "actorNameValue";
             public static string AnimalSlotName => "animalNameValue";
             public static string DateSlotName => "dateSlot";
             public static string DurationSlotName => "durationInputValue";
-            public static string FourDigitNumSlotName => "fourDigitNumSlot";
             public static string NumberSlotName => "numberInputValue";
             public static string OrdinalSlotName => "ordinalInputValue";
             public static string PhoneSlotName => "phoneInputValue";
@@ -31,6 +25,7 @@ namespace AlexaNetCore.ZeroToHero.Slots
         {
             public static string ActorNameSlotChecker => "actorNameSlotCheckerIntent";
             public static string AnimalSlotCheckerIntent => "AnimalSlotCheckerIntent";
+            public static string BirthYear=> "BirthYearIntent";
             public static string DateSlotChecker => "DateSlotCheckerIntent";
             public static string DurationSlotCheckerIntent => "DurationSlotCheckerIntent";
             public static string FourDigitlotCheckerIntent => "FourDigitNumberSlotCheckerIntent";

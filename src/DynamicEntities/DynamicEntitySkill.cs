@@ -7,7 +7,7 @@ namespace AlexaNetCore.ZeroToHero.DynamicEntities
         public DynamicEntitySkill()
         {
             SetSkillVersion("0.1.0");
-            SetInvocationName("alexanetcore multiturn");
+            SetInvocationName("alexanetcore multiturn dialog demo");
 
             AddCustomSlotType(new AlexaCustomSlotType(SkillConstants.SlotTypes.StateName)
                 .AddValueOption(new AlexaCustomSlotTypeValueOption("CA", "California"))

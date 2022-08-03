@@ -7,7 +7,7 @@ namespace AlexaNetCore.ZeroToHero.Session
         public SessionDemoSkill()
         {
             SetSkillVersion("0.3.0");
-            SetInvocationName("zero to hero test");
+            SetInvocationName("alexanetcore session demo");
 
             RegisterIntentHandler(new GetSessionValueIntent());
             RegisterIntentHandler(new SetSessionValueIntent());

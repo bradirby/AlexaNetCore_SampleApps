@@ -1,7 +1,9 @@
 ﻿using System.Text;
+using AlexaNetCore;
 using AlexaNetCore.Model;
+using Slots.SupportingFiles;
 
-namespace AlexaNetCore.ZeroToHero.Slots
+namespace Slots.Intents
 {
     internal class DurationSlotCheckerIntent: AlexaIntentHandlerBase
     {

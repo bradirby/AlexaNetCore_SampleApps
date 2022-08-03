@@ -7,7 +7,7 @@ namespace AlexaNetCore.ZeroToHero.MultiturnDialog
         public MultiturnDialogSkill()
         {
             SetSkillVersion("0.1.0");
-            SetInvocationName("alexanetcore multiturn");
+            SetInvocationName("alexanetcore multiturn demo");
 
             AddCustomSlotType(new AlexaCustomSlotType(SkillConstants.SlotTypes.TimeOfDay)
                 .AddValueOption(new AlexaCustomSlotTypeValueOption("B", "breakfast"))

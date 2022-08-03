@@ -7,7 +7,7 @@ namespace AlexaNetCore.ZeroToHero.Cards
         public CardDemoSkill()
         {
             SetSkillVersion("0.3.0");
-            SetInvocationName("zero to hero test");
+            SetInvocationName("alexanetcore card demo");
 
             RegisterIntentHandler(new DefaultLaunchIntentHandler("Welcome to the card demo skill"));
 

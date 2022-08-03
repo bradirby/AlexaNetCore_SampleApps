@@ -1,12 +1,14 @@
 ﻿using System.Text;
+using AlexaNetCore;
 using AlexaNetCore.Model;
+using Slots.SupportingFiles;
 
-namespace AlexaNetCore.ZeroToHero.Slots
+namespace Slots.Intents
 {
-    internal class FourDigitNumberSlotCheckerIntent: AlexaIntentHandlerBase
+    internal class FourDigitNumberIntent: AlexaIntentHandlerBase
     {
 
-        public FourDigitNumberSlotCheckerIntent() : base(AlexaIntentType.Custom,SkillConstants.IntentNames.FourDigitlotCheckerIntent)
+        public FourDigitNumberIntent() : base(AlexaIntentType.Custom,SkillConstants.IntentNames.FourDigitlotCheckerIntent)
         {
             AddSlot( SkillConstants.SlotNames.FourDigitNumSlotName,AlexaBuiltInSlotTypes.FourDigitNumber, false);
             AddSampleInvocation("Give me some four digit years");
@@ -21,9 +23,9 @@ namespace AlexaNetCore.ZeroToHero.Slots
                 {
                     var sb = new StringBuilder();
                     var connectorWord = "";
-                    foreach (var alexaResponseSlotValue in slotVal.Values)
+                    foreach (var oneOfManyValues in slotVal.Values)
                     {
-                        sb.Append(connectorWord + AddSpaceBetweenEachLetter(alexaResponseSlotValue.Value) );
+                        sb.Append(connectorWord + AddSpaceBetweenEachLetter(oneOfManyValues.Value) );
                         connectorWord = ", and ";
                     }
                     Speak($"I got {slotVal.Values.Count} values including {sb.ToString()}");

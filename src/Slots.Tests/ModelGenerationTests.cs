@@ -1,11 +1,10 @@
 using System;
 using System.IO;
 using System.Text.Json;
-using AlexaNetCore;
 using AlexaNetCore.Model;
 using NUnit.Framework;
 
-namespace AlexaNetCore.ZeroToHero.Slots.Tests
+namespace Slots.Tests
 {
     /// <summary>
     /// These tests are all explicit and are used to generate the various supporting files.

@@ -1,1 +1,52 @@
-{"interactionModel":{"languageModel":{"invocationName":"zero to hero test","intents":[{"name":"actorNameSlotCheckerIntent","slots":[{"name":"actorNameValue","type":"AMAZON.Actor"}],"samples":["Give me Actor names"]},{"name":"AMAZON.CancelIntent","samples":[]},{"name":"AMAZON.FallbackIntent","samples":[]},{"name":"AMAZON.HelpIntent","samples":[]},{"name":"AMAZON.NavigateHomeIntent","samples":[]},{"name":"AMAZON.StopIntent","samples":[]},{"name":"AnimalSlotCheckerIntent","slots":[{"name":"animalNameValue","type":"AMAZON.Animal"}],"samples":["Give me some animal names"]},{"name":"DateSlotCheckerIntent","slots":[{"name":"dateSlot","type":"AMAZON.DATE"}],"samples":["Give me some dates"]},{"name":"DurationSlotCheckerIntent","slots":[{"name":"durationInputValue","type":"AMAZON.DURATION"}],"samples":["Give me some time durations"]},{"name":"FourDigitNumberSlotCheckerIntent","slots":[{"name":"fourDigitNumSlot","type":"AMAZON.FOUR_DIGIT_NUMBER"}],"samples":["Give me some four digit years"]},{"name":"NumberSlotCheckerIntent","slots":[{"name":"numberInputValue","type":"AMAZON.NUMBER"}],"samples":["Give me some integers"]},{"name":"OrdinalSlotCheckerIntent","slots":[{"name":"ordinalInputValue","type":"AMAZON.Ordinal"}],"samples":["Give me some ordinals like first, third, or last"]},{"name":"PhoneNumberSlotCheckerIntent","slots":[{"name":"phoneInputValue","type":"AMAZON.PhoneNumber"}],"samples":["Give me some phone numbers"]},{"name":"TimeSlotCheckerIntent","slots":[{"name":"timeInputValue","type":"AMAZON.TIME"}],"samples":["give me some time slots"]},{"name":"USCityCheckerIntent","slots":[{"name":"timeInputValue","type":"AMAZON.US_CITY"}],"samples":["give me some U S Cities"]},{"name":"USStateSlotCheckerIntent","slots":[{"name":"stateNameValue","type":"AMAZON.US_STATE"}],"samples":["give me some U S States"]}]}}}
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "alexanetcore slot value checker",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "BirthYearIntent",
+          "slots": [
+            {
+              "name": "fourDigitNumSlot",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "multipleValues": {
+                "enabled": true
+              }
+            }
+          ],
+          "samples": [
+            "I was born in the year {fourDigitNumSlot}",
+            "I was born in {fourDigitNumSlot}",
+            "My birth year was {fourDigitNumSlot}",
+            "The year of my birth was {fourDigitNumSlot}"
+          ]
+        }
+      ]
+    }
+  }
+}

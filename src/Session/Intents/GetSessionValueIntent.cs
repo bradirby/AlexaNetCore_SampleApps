@@ -1,5 +1,4 @@
-﻿using System.Text;
-using AlexaNetCore.Model;
+﻿using AlexaNetCore.Model;
 
 namespace AlexaNetCore.ZeroToHero.Session
 {

@@ -1,9 +1,9 @@
-﻿
-using AlexaNetCore;
+﻿using System.Threading.Tasks;
 using NUnit.Framework;
-using System.Threading.Tasks;
+using Slots.SupportingFiles;
+using Slots.Tests.TestData;
 
-namespace AlexaNetCore.ZeroToHero.Slots.Tests
+namespace Slots.Tests
 {
     public class DateCheckerIntentTests 
     {

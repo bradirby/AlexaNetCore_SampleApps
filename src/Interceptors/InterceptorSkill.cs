@@ -8,7 +8,7 @@ namespace AlexaNetCore.ZeroToHero.Interceptors
         public InterceptorSkill()
         {
             SetSkillVersion("0.3.0");
-            SetInvocationName("zero to hero test");
+            SetInvocationName("alexanetcore interceptor demo");
 
             RegisterIntentHandler(new DefaultLaunchIntentHandler("Hi, you've found the interceptor test skill.  You can ask me if the interceptor is active.", 
                 "The interceptors are running, are you still there?"));
