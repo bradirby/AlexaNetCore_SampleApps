@@ -1,11 +1,12 @@
 using System;
 using System.IO;
 using System.Text.Json;
-using AlexaNetCore;
 using AlexaNetCore.Model;
+using AlexaNetCore.ZeroToHero.Session;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 
-namespace AlexaNetCore.ZeroToHero.Session.Tests
+namespace Session.Tests
 {
     /// <summary>
     /// These tests are all explicit and are used to generate the various supporting files.
@@ -21,7 +22,7 @@ namespace AlexaNetCore.ZeroToHero.Session.Tests
             filePath ??= "";
             filePath = Path.Combine(filePath, "Session\\SupportingFiles\\InteractionModels");
 
-            var skill = new SessionDemoSkill();
+            var skill = new SessionDemoSkill(new LoggerFactory());
             
             var locale = AlexaLocale.English_US;
             File.WriteAllText(Path.Combine(filePath, $"{locale.LocaleString}.json"), 

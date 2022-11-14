@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using AlexaNetCore;
 using AlexaNetCore.Model;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 
 namespace AlexaNetCore.ZeroToHero.MultiturnDialog.Tests
@@ -21,7 +22,7 @@ namespace AlexaNetCore.ZeroToHero.MultiturnDialog.Tests
             filePath ??= "";
             filePath = Path.Combine(filePath, "MultiturnDialog\\SupportingFiles\\InteractionModels");
 
-            var skill = new MultiturnDialogSkill();
+            var skill = new MultiturnDialogSkill(new LoggerFactory());
             
             var locale = AlexaLocale.English_US;
             File.WriteAllText(Path.Combine(filePath, $"{locale.LocaleString}.json"), 

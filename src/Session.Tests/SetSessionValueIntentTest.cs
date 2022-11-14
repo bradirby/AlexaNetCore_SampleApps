@@ -1,9 +1,12 @@
-﻿using NUnit.Framework;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AlexaNetCore;
-using AlexaNetCore.ZeroToHero.Util;
+using AlexaNetCore.ZeroToHero.Session;
+using Microsoft.Extensions.Logging;
+using NUnit.Framework;
+using Session.Tests.Interceptors;
+using Session.Tests.TestData;
 
-namespace AlexaNetCore.ZeroToHero.Session.Tests
+namespace Session.Tests
 {
     internal class SetSessionValueIntentTest
     {
@@ -11,7 +14,8 @@ namespace AlexaNetCore.ZeroToHero.Session.Tests
         [Test]
         public async Task CardBodyTextCorrect()
         {
-            var skill = new SessionDemoSkill().LoadRequest(BuiltInIntentQueries.GetRequestWithIntentName(SkillConstants.IntentNames.GetSessionValueIntent));
+            var skill = new SessionDemoSkill(new LoggerFactory());
+            skill.LoadRequest(BuiltInIntentQueries.GetRequestWithIntentName(SkillConstants.IntentNames.GetSessionValueIntent));
 
             //get the intent we want to test
             var intent = skill.GetRegisteredIntent(AlexaIntentType.Custom, SkillConstants.IntentNames.GetSessionValueIntent);

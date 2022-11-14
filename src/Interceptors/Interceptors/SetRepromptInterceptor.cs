@@ -10,7 +10,7 @@ namespace Interceptors.Interceptors
     /// Intents that have the ShouldendSession set to true will not get a reprompt.  All others
     /// will.
     /// </summary>
-    public class SetRepromptInterceptor : IAlexaResponseInterceptor
+    public class SetRepromptInterceptor : AlexaBaseResponseInterceptor
     {
 
         private AlexaMultiLanguageText GenericReprompt { get; set; }
@@ -31,7 +31,7 @@ namespace Interceptors.Interceptors
         /// to requests if there is not one already.  It only adds if the intent
         /// want's to keep the session open
         /// </summary>
-        public Task<AlexaResponseEnvelope> ProcessAsync(AlexaRequestEnvelope reqEnv, AlexaResponseEnvelope respEnv)
+        public override Task ProcessAsync(IAlexaRequestEnvelope reqEnv, IAlexaResponseEnvelope respEnv)
         {
             try
             {
@@ -40,12 +40,12 @@ namespace Interceptors.Interceptors
                 if (respEnv.ShouldEndSession.HasValue && !respEnv.ShouldEndSession.Value)
                     respEnv.Reprompt(GenericReprompt);
 
-                return Task.FromResult(respEnv);
+                return Task.CompletedTask;
             }
             catch (Exception)
             {
                 //ignore
-                return Task.FromResult(respEnv);
+                return Task.CompletedTask;
             }
         }
 

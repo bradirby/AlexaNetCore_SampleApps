@@ -7,7 +7,7 @@ namespace AlexaNetCore.ZeroToHero.Util;
 /// <summary>
 /// This interceptor is for use in debug to set the incoming userid to a specific property for testing
 /// </summary>
-public class SetSessionValueDebugInterceptor: IAlexaRequestInterceptor
+public class SetSessionValueDebugInterceptor: AlexaBaseRequestInterceptor
 {
     private string SessionVal;
     private string SessionKey;
@@ -18,9 +18,9 @@ public class SetSessionValueDebugInterceptor: IAlexaRequestInterceptor
         SessionKey = sessionKey;
     }
 
-    public Task<AlexaRequestEnvelope> ProcessAsync(AlexaRequestEnvelope reqEnv)
+    public override Task<IAlexaRequestEnvelope> ProcessAsync(IAlexaRequestEnvelope reqEnv)
     {
-        reqEnv.SetSessionAttributeValue( SessionKey, SessionVal);
+        SetSessionValue( SessionKey, SessionVal);
         return Task.FromResult( reqEnv);
     }
 

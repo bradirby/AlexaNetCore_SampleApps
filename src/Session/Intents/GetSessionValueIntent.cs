@@ -9,14 +9,14 @@ namespace AlexaNetCore.ZeroToHero.Session
         {
             AddSampleInvocation("Tell me what my favorite actor is");
             AddSampleInvocation("Who is my favorite actor");
-            AddSampleInvocation("Can you guess my favorite actor?");
+            AddSampleInvocation("Can you guess my favorite actor");
         }
 
         public override Task ProcessAsync()
         {
             try
             {
-                var actorName = GetRequestSessionValue(SkillConstants.SessionValueNames.ActorName, "");
+                var actorName = GetSessionValue(SkillConstants.SessionValueNames.ActorName, "");
                 if (actorName == "") Speak("I could not find your favorite actor name");
                 else Speak($"Your favorite actor is {actorName}");
             }

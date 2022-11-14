@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "alexanetcore getting started",
+      "invocationName": "alexanetcore hello world",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",

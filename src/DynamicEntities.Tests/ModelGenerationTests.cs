@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using AlexaNetCore;
 using AlexaNetCore.Model;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 
 namespace AlexaNetCore.ZeroToHero.DynamicEntities.Tests
@@ -21,7 +22,7 @@ namespace AlexaNetCore.ZeroToHero.DynamicEntities.Tests
             filePath ??= "";
             filePath = Path.Combine(filePath, "DynamicEntities\\SupportingFiles\\InteractionModels");
 
-            var skill = new DynamicEntitySkill();
+            var skill = new DynamicEntitySkill(new LoggerFactory());
             
             var locale = AlexaLocale.English_US;
             File.WriteAllText(Path.Combine(filePath, $"{locale.LocaleString}.json"), 

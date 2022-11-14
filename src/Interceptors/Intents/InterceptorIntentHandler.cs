@@ -13,7 +13,7 @@ namespace AlexaNetCore.ZeroToHero.Interceptors
         {
             try
             {
-                var usrName = RequestEnv.GetSessionAttribute(SkillConstants.SessionAttributeNames.Username, "unknown");
+                var usrName = GetSessionValue(SkillConstants.SessionAttributeNames.Username).ToString();
                 Speak($"The interceptor is intercepting and found the user {usrName}");
             }
             catch (Exception)

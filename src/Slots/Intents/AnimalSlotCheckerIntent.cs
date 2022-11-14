@@ -16,35 +16,43 @@ namespace Slots.Intents
 
         public override Task ProcessAsync()
         {
+            KeepSessionActiveAfterResponse();
             try
             {
-                var slotVal = GetAlexaSlot(SkillConstants.SlotNames.AnimalSlotName);
-                if (slotVal.ContainsMultipleValues)
+                var slot = GetAlexaSlot(SkillConstants.SlotNames.FourDigitNumSlotName);
+
+                if (slot == null)
+                {
+                    Speak("got null slot value");
+                    return Task.CompletedTask;
+                }
+
+                if (slot.ContainsMultipleValues)
                 {
                     var sb = new StringBuilder();
                     var connectorWord = "";
-                    foreach (var alexaResponseSlotValue in slotVal.Values)
+                    foreach (var oneOfManyValues in slot.Values)
                     {
-                        sb.Append(connectorWord + alexaResponseSlotValue.Value);
+                        sb.Append(connectorWord + oneOfManyValues);
                         connectorWord = ", and ";
                     }
-                    Speak($"I got {slotVal.Values.Count} values including {sb.ToString()}");
+
+                    Speak($"I got {slot.Value.ToList().Count} values including {sb}");
                 }
                 else
                 {
-                    Speak($"I got the single value of {slotVal.Value}");
+                    Speak($"I got the single value of {slot.Value}");
                 }
 
             }
-            catch (Exception )
+            catch (Exception)
             {
                 Speak("Sorry, something went wrong.  Can you try again?");
             }
 
-            KeepSessionActiveAfterResponse();
             return Task.CompletedTask;
-
         }
+
 
 
     }

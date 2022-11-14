@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using NUnit.Framework;
-using AlexaNetCore.ZeroToHero.Util;
+using MultiturnDialog.Tests.TestData;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.MultiturnDialog.Tests;
 
@@ -9,7 +10,7 @@ public class HelpRequestTests
     [Test]
     public async Task SetsSpokenText()
     {
-        var skill = new MultiturnDialogSkill();
+        var skill = new MultiturnDialogSkill(new LoggerFactory());
         skill.LoadRequest(BuiltInIntentQueries.HelpRequest);
         await skill.ProcessRequestAsync();
 
@@ -22,7 +23,7 @@ public class HelpRequestTests
     [Test]
     public async Task KeepsSessionOpen()
     {
-        var skill = new MultiturnDialogSkill();
+        var skill = new MultiturnDialogSkill(new LoggerFactory());
         skill.LoadRequest(BuiltInIntentQueries.HelpRequest);
         await skill.ProcessRequestAsync();
 

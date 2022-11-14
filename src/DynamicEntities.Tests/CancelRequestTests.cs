@@ -1,9 +1,9 @@
-﻿using NUnit.Framework;
-using System.Threading.Tasks;
-using AlexaNetCore.ZeroToHero.Util;
+﻿using System.Threading.Tasks;
+using AlexaNetCore.ZeroToHero.DynamicEntities;
+using Microsoft.Extensions.Logging;
+using NUnit.Framework;
 
-
-namespace AlexaNetCore.ZeroToHero.DynamicEntities.Tests;
+namespace DynamicEntities.Tests;
 
 public class CancelRequestTests 
 {
@@ -11,8 +11,8 @@ public class CancelRequestTests
     [Test]
     public async Task SetsSpokenText()
     {
-        var skill = new DynamicEntitySkill();
-        skill.LoadRequest(BuiltInIntentQueries.CancelRequest);
+        var skill = new DynamicEntitySkill(new LoggerFactory());
+        skill.LoadRequest(TestData.BuiltInIntentQueries.CancelRequest);
         await skill.ProcessRequestAsync();
 
         Assert.AreEqual("OK, Cancelling", skill.GetSpokenText());
@@ -21,8 +21,8 @@ public class CancelRequestTests
     [Test]
     public async Task HasNoRepromptText()
     {
-        var skill = new DynamicEntitySkill();
-        skill.LoadRequest(BuiltInIntentQueries.CancelRequest);
+        var skill = new DynamicEntitySkill(new LoggerFactory());
+        skill.LoadRequest(TestData.BuiltInIntentQueries.CancelRequest);
         await skill.ProcessRequestAsync();
         
         Assert.IsTrue(string.IsNullOrWhiteSpace(skill.GetRepromptText()));
@@ -31,8 +31,8 @@ public class CancelRequestTests
     [Test]
     public async Task ClosesSession()
     {
-        var skill = new DynamicEntitySkill();
-        skill.LoadRequest(BuiltInIntentQueries.CancelRequest);
+        var skill = new DynamicEntitySkill(new LoggerFactory());
+        skill.LoadRequest(TestData.BuiltInIntentQueries.CancelRequest);
         await skill.ProcessRequestAsync();
         
         Assert.AreEqual(true, skill.ShouldEndSession);

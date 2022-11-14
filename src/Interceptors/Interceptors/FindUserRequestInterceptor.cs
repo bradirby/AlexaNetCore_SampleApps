@@ -3,15 +3,15 @@ using AlexaNetCore.RequestModel;
 
 namespace AlexaNetCore.ZeroToHero.Interceptors
 {
-    public class FindUserRequestInterceptor : IAlexaRequestInterceptor
+    public class FindUserRequestInterceptor : AlexaBaseRequestInterceptor
     {
-        public Task<AlexaRequestEnvelope> ProcessAsync(AlexaRequestEnvelope reqEnv)
+        public override Task ProcessAsync(IAlexaRequestEnvelope reqEnv)
         {
             var usrid = reqEnv.GetUserId();
 
             //add code to lookup the user information
 
-            reqEnv.SetSessionAttributeValue(SkillConstants.SessionAttributeNames.Username,"Jeff Bezos");
+            SetSessionValue(SkillConstants.SessionAttributeNames.Username,"Jeff Bezos");
             return Task.FromResult(reqEnv);
         }
     }

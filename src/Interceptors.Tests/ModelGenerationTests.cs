@@ -5,6 +5,7 @@ using AlexaNetCore;
 using AlexaNetCore.Model;
 using NUnit.Framework;
 using AlexaNetCore.ZeroToHero.Interceptors;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.Interceptors.Tests
 {
@@ -22,7 +23,7 @@ namespace AlexaNetCore.ZeroToHero.Interceptors.Tests
             filePath ??= "";
             filePath = Path.Combine(filePath, "Interceptors\\SupportingFiles\\InteractionModels");
 
-            var skill = new InterceptorSkill();
+            var skill = new InterceptorSkill(new LoggerFactory());
             
             var locale = AlexaLocale.English_US;
             File.WriteAllText(Path.Combine(filePath, $"{locale.LocaleString}.json"), 

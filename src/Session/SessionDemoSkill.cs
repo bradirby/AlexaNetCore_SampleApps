@@ -1,10 +1,11 @@
 ﻿using AlexaNetCore;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.Session
 {
     public class SessionDemoSkill : AlexaSkillBase
     {
-        public SessionDemoSkill()
+        public SessionDemoSkill(ILoggerFactory loggerFactory) : base(loggerFactory)
         {
             SetSkillVersion("0.3.0");
             SetInvocationName("alexanetcore session demo");

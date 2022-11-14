@@ -9,7 +9,7 @@ using AlexaNetCore.RequestModel;
 
 namespace Zero2HeroUtil.Interceptors
 {
-    public class WriteIncomingSessionValueDebugInterceptor : IAlexaRequestInterceptor
+    public class WriteIncomingSessionValueDebugInterceptor : AlexaBaseRequestInterceptor
     {
         private string SessionKey;
         private string SessionValue;
@@ -21,9 +21,9 @@ namespace Zero2HeroUtil.Interceptors
         }
 
 
-        public Task<AlexaRequestEnvelope> ProcessAsync(AlexaRequestEnvelope reqEnv)
+        public override Task<IAlexaRequestEnvelope> ProcessAsync(IAlexaRequestEnvelope reqEnv)
         {
-            reqEnv.SetSessionAttributeValue(SessionKey, SessionValue);
+            SetSessionValue(SessionKey, SessionValue);
             return Task.FromResult(reqEnv);
         }
     }

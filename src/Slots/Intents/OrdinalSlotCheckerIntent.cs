@@ -18,17 +18,17 @@ namespace Slots.Intents
         {
             try
             {
-                var slotVal = GetAlexaSlot(SkillConstants.SlotNames.OrdinalSlotName);
+                var slotVal = GetAlexaSlot(SkillConstants.SlotNames.DurationSlotName);
                 if (slotVal.ContainsMultipleValues)
                 {
                     var sb = new StringBuilder();
                     var connectorWord = "";
                     foreach (var alexaResponseSlotValue in slotVal.Values)
                     {
-                        sb.Append(connectorWord + AddSpaceBetweenEachLetter(alexaResponseSlotValue.Value) );
+                        sb.Append(connectorWord + AddSpaceBetweenEachLetter(alexaResponseSlotValue));
                         connectorWord = ", and ";
                     }
-                    Speak($"I got {slotVal.Values.Count} values including {sb.ToString()}");
+                    Speak($"I got {slotVal.Values.ToList().Count} values including {sb.ToString()}");
                 }
                 else
                 {
@@ -36,13 +36,14 @@ namespace Slots.Intents
                 }
 
             }
-            catch (Exception )
+            catch (Exception)
             {
                 Speak("Sorry, something went wrong.  Can you try again?");
             }
 
             KeepSessionActiveAfterResponse();
             return Task.CompletedTask;
+
         }
 
         private string AddSpaceBetweenEachLetter(string str)

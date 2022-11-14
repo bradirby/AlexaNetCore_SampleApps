@@ -17,7 +17,7 @@ public class GetCountyIntent : AlexaIntentHandlerBase
     {
         try
         {
-            var stateName = GetRequestSessionValue(SkillConstants.SessionVarNames.StateName, "unknown");
+            var stateName = GetSessionValue(SkillConstants.SessionVarNames.StateName, "unknown");
 
 
             KeepSessionActiveAfterResponse();

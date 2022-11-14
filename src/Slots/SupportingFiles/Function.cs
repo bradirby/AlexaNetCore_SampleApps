@@ -1,5 +1,6 @@
 using AlexaNetCore.RequestModel;
 using Amazon.Lambda.Core;
+using Microsoft.Extensions.Logging;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
@@ -14,6 +15,6 @@ public class Function
     /// </summary>
     public async Task<string> FunctionHandler(AlexaRequestEnvelope input)
     {
-        return (await new SlotCheckerSkill().LoadRequest(input).ProcessRequestAsync()).GetResponse();
+        return (await new SlotCheckerSkill(new LoggerFactory()).LoadRequest(input).ProcessRequestAsync()).GetResponse();
     }
 }

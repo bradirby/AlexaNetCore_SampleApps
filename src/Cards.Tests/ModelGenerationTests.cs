@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using AlexaNetCore;
 using AlexaNetCore.Model;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 
 namespace AlexaNetCore.ZeroToHero.Cards.Tests
@@ -21,7 +22,7 @@ namespace AlexaNetCore.ZeroToHero.Cards.Tests
             filePath ??= "";
             filePath = Path.Combine(filePath, "Cards\\SupportingFiles\\InteractionModels");
 
-            var skill = new CardDemoSkill();
+            var skill = new CardDemoSkill(new LoggerFactory());
             
             var locale = AlexaLocale.English_US;
             File.WriteAllText(Path.Combine(filePath, $"{locale.LocaleString}.json"), 

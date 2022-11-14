@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Text.Json;
 using AlexaNetCore.Model;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 
 namespace Slots.Tests
@@ -20,7 +21,7 @@ namespace Slots.Tests
             filePath ??= "";
             filePath = Path.Combine(filePath, "Slots\\SupportingFiles\\InteractionModels");
 
-            var skill = new SlotCheckerSkill();
+            var skill = new SlotCheckerSkill(new LoggerFactory());
             
             var locale = AlexaLocale.English_US;
             File.WriteAllText(Path.Combine(filePath, $"{locale.LocaleString}.json"), 

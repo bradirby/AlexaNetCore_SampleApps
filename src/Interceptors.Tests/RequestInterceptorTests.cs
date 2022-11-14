@@ -1,7 +1,8 @@
 ﻿using System.Threading.Tasks;
 using AlexaNetCore;
+using Interceptors.Tests.Interceptors;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
-using AlexaNetCore.ZeroToHero.Util;
 
 namespace AlexaNetCore.ZeroToHero.Interceptors.Tests
 {
@@ -11,8 +12,8 @@ namespace AlexaNetCore.ZeroToHero.Interceptors.Tests
         [Test]
         public async Task FindUserInterceptor_AddsUsernameToRequest()
         {
-            var skill = await new InterceptorSkill()
-                .RegisterRequestInterceptor(new SetUserIdDebugInterceptor("jeff"), 100)  //set the userid for testing
+            var skill = await new InterceptorSkill(new LoggerFactory())
+                .RegisterRequestInterceptor(new SetUserIdDebugInterceptor("jeff"))  
                 .LoadRequest(InterceptorSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
 

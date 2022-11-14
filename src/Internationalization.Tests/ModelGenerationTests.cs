@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using AlexaNetCore;
 using AlexaNetCore.Model;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 
 namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
@@ -23,7 +24,7 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
             filePath ??= "";
             filePath = Path.Combine(filePath, "Internationalization\\SupportingFiles\\InteractionModels");
 
-            var skill = new InternationalizationSkill();
+            var skill = new InternationalizationSkill(new LoggerFactory());
             
             var locale = AlexaLocale.English_US;
             File.WriteAllText(Path.Combine(filePath, $"{locale.LocaleString}.json"), 

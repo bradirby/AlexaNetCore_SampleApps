@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
-using AlexaNetCore.ZeroToHero.Util;
 
 namespace AlexaNetCore.ZeroToHero.HelloWorld.Tests;
 
@@ -9,7 +9,7 @@ public class HelpRequestTests
     [Test]
     public async Task SetsSpokenText()
     {
-        var skill = new HelloWorldSkill();
+        var skill = new HelloWorldSkill(new LoggerFactory());
         skill.LoadRequest(HelloWorldSampleQueries.HelpIntent);
         await skill.ProcessRequestAsync();
 
@@ -22,7 +22,7 @@ public class HelpRequestTests
     [Test]
     public async Task KeepsSessionOpen()
     {
-        var skill = new HelloWorldSkill();
+        var skill = new HelloWorldSkill(new LoggerFactory());
         skill.LoadRequest(HelloWorldSampleQueries.HelpIntent);
         await skill.ProcessRequestAsync();
 

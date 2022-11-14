@@ -1,113 +1,16 @@
-﻿namespace AlexaNetCore.ZeroToHero.Util
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Session.Tests.TestData
 {
-    public class BuiltInIntentQueries
-    {
+	public class BuiltInIntentQueries
+	{
 
-        public static string LaunchRequest =>
-            @"
-
-
-{
-	""version"": ""1.0"",
-	""session"": {
-		""new"": true,
-		""sessionId"": ""amzn1.echo-api.session.ac1f7d2e-c387-4101-a671-0c4e90cca2be"",
-		""application"": {
-			""applicationId"": ""amzn1.ask.skill.xxxxxx""
-		},
-		""attributes"": {},
-		""user"": {
-			""userId"": ""amzn1.ask.account.xxxxxx""
-		}
-	},
-	""context"": {
-		""Viewports"": [
-			{
-				""type"": ""APL"",
-				""id"": ""main"",
-				""shape"": ""RECTANGLE"",
-				""dpi"": 213,
-				""presentationType"": ""STANDARD"",
-				""canRotate"": false,
-				""configuration"": {
-					""current"": {
-						""mode"": ""HUB"",
-						""video"": {
-							""codecs"": [
-								""H_264_42"",
-								""H_264_41""
-							]
-						},
-						""size"": {
-							""type"": ""DISCRETE"",
-							""pixelWidth"": 1280,
-							""pixelHeight"": 800
-						}
-					}
-				}
-			}
-		],
-		""Viewport"": {
-			""experiences"": [
-				{
-					""arcMinuteWidth"": 346,
-					""arcMinuteHeight"": 216,
-					""canRotate"": false,
-					""canResize"": false
-				}
-			],
-			""mode"": ""HUB"",
-			""shape"": ""RECTANGLE"",
-			""pixelWidth"": 1280,
-			""pixelHeight"": 800,
-			""dpi"": 213,
-			""currentPixelWidth"": 1280,
-			""currentPixelHeight"": 800,
-			""touch"": [
-				""SINGLE""
-			],
-			""video"": {
-				""codecs"": [
-					""H_264_42"",
-					""H_264_41""
-				]
-			}
-		},
-		""Extensions"": {
-			""available"": {
-				""aplext:backstack:10"": {}
-			}
-		},
-		""System"": {
-			""application"": {
-				""applicationId"": ""amzn1.ask.skill.xxxxxx""
-			},
-			""user"": {
-				""userId"": ""amzn1.ask.account.xxxxxx""
-			},
-			""device"": {
-				""deviceId"": ""amzn1.ask.device.xxxxxx"",
-				""supportedInterfaces"": {}
-			},
-			""apiEndpoint"": ""https://api.amazonalexa.com"",
-			""apiAccessToken"": ""xxxxxx""
-		}
-	},
-	""request"": {
-		""type"": ""LaunchRequest"",
-		""requestId"": ""amzn1.echo-api.request.xxxxxx"",
-		""locale"": ""en-US"",
-		""timestamp"": ""2022-03-28T12:18:23Z"",
-		""shouldLinkResultBeReturned"": false
-	}
-}
-
-"
-                ;
-
-
-        public static string GetUserState=>
-            @"
+		public static string LaunchRequest =>
+			@"
 
 
 {
@@ -206,13 +109,116 @@
 }
 
 "
-                ;
+				;
+
+
+		public static string GetUserState =>
+			@"
+
+
+{
+	""version"": ""1.0"",
+	""session"": {
+		""new"": true,
+		""sessionId"": ""amzn1.echo-api.session.ac1f7d2e-c387-4101-a671-0c4e90cca2be"",
+		""application"": {
+			""applicationId"": ""amzn1.ask.skill.xxxxxx""
+		},
+		""attributes"": {},
+		""user"": {
+			""userId"": ""amzn1.ask.account.xxxxxx""
+		}
+	},
+	""context"": {
+		""Viewports"": [
+			{
+				""type"": ""APL"",
+				""id"": ""main"",
+				""shape"": ""RECTANGLE"",
+				""dpi"": 213,
+				""presentationType"": ""STANDARD"",
+				""canRotate"": false,
+				""configuration"": {
+					""current"": {
+						""mode"": ""HUB"",
+						""video"": {
+							""codecs"": [
+								""H_264_42"",
+								""H_264_41""
+							]
+						},
+						""size"": {
+							""type"": ""DISCRETE"",
+							""pixelWidth"": 1280,
+							""pixelHeight"": 800
+						}
+					}
+				}
+			}
+		],
+		""Viewport"": {
+			""experiences"": [
+				{
+					""arcMinuteWidth"": 346,
+					""arcMinuteHeight"": 216,
+					""canRotate"": false,
+					""canResize"": false
+				}
+			],
+			""mode"": ""HUB"",
+			""shape"": ""RECTANGLE"",
+			""pixelWidth"": 1280,
+			""pixelHeight"": 800,
+			""dpi"": 213,
+			""currentPixelWidth"": 1280,
+			""currentPixelHeight"": 800,
+			""touch"": [
+				""SINGLE""
+			],
+			""video"": {
+				""codecs"": [
+					""H_264_42"",
+					""H_264_41""
+				]
+			}
+		},
+		""Extensions"": {
+			""available"": {
+				""aplext:backstack:10"": {}
+			}
+		},
+		""System"": {
+			""application"": {
+				""applicationId"": ""amzn1.ask.skill.xxxxxx""
+			},
+			""user"": {
+				""userId"": ""amzn1.ask.account.xxxxxx""
+			},
+			""device"": {
+				""deviceId"": ""amzn1.ask.device.xxxxxx"",
+				""supportedInterfaces"": {}
+			},
+			""apiEndpoint"": ""https://api.amazonalexa.com"",
+			""apiAccessToken"": ""xxxxxx""
+		}
+	},
+	""request"": {
+		""type"": ""LaunchRequest"",
+		""requestId"": ""amzn1.echo-api.request.xxxxxx"",
+		""locale"": ""en-US"",
+		""timestamp"": ""2022-03-28T12:18:23Z"",
+		""shouldLinkResultBeReturned"": false
+	}
+}
+
+"
+				;
 
 
 
 
-        public static string CancelRequest =>
-            @"
+		public static string CancelRequest =>
+			@"
 {
   ""session"": {
     ""sessionId"": ""SessionId.xxxxxx"",
@@ -245,8 +251,8 @@
 
 
 
-        public static string HelpRequest =>
-            @"
+		public static string HelpRequest =>
+			@"
 {
   ""session"": {
     ""sessionId"": ""SessionId.xxxxxx"",
@@ -278,11 +284,11 @@
 
 
 
-        /// <summary>
-        /// The intent type for this intent will not be reconized by the skill engine
-        /// </summary>
-        public static string InvalidIntentType =>
-            @"
+		/// <summary>
+		/// The intent type for this intent will not be reconized by the skill engine
+		/// </summary>
+		public static string InvalidIntentType =>
+			@"
 {
   ""session"": {
     ""sessionId"": ""SessionId.xxxxxx"",
@@ -321,19 +327,19 @@
   ""version"": ""1.0""
 }
 "
-                ;
+				;
 
 
 
 
 
-        /// <summary>
-        /// The
-        /// </summary>
-        public static string GetRequestWithIntentName(string intentName)
-        {
+		/// <summary>
+		/// The
+		/// </summary>
+		public static string GetRequestWithIntentName(string intentName)
+		{
 
-            return @"
+			return @"
 
 {
 	""version"": ""1.0"",
@@ -445,12 +451,12 @@
 	}
 }
 
-".Replace("!!FindAndReplaceThisIntent!!",intentName);
+".Replace("!!FindAndReplaceThisIntent!!", intentName);
 
-        }
+		}
 
-        public static string EmptyRequest =>
-            @"
+		public static string EmptyRequest =>
+			@"
 {
   ""session"": {
     ""sessionId"": ""SessionId.xxxxxx"",
@@ -491,10 +497,10 @@
 
 
 
-        
 
-        public static string StopRequest => 
-            @"
+
+		public static string StopRequest =>
+			@"
 {
   ""session"": {
     ""sessionId"": ""SessionId.bbb7ba23-xxxxxx"",
@@ -525,7 +531,7 @@
 
 
 
-    }
+	}
 
 
 }

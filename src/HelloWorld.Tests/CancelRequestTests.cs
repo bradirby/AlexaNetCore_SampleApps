@@ -1,6 +1,6 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.Extensions.Logging;
+using NUnit.Framework;
 using System.Threading.Tasks;
-using AlexaNetCore.ZeroToHero.Util;
 
 
 
@@ -12,7 +12,7 @@ public class CancelRequestTests
     [Test]
     public async Task SetsSpokenText()
     {
-        var skill = new HelloWorldSkill();
+        var skill = new HelloWorldSkill(new LoggerFactory());
         skill.LoadRequest(HelloWorldSampleQueries.CancelIntent);
         await skill.ProcessRequestAsync();
 
@@ -22,7 +22,7 @@ public class CancelRequestTests
     [Test]
     public async Task HasNoRepromptText()
     {
-        var skill = new HelloWorldSkill();
+        var skill = new HelloWorldSkill(new LoggerFactory());
         skill.LoadRequest(HelloWorldSampleQueries.CancelIntent);
         await skill.ProcessRequestAsync();
         
@@ -32,7 +32,7 @@ public class CancelRequestTests
     [Test]
     public async Task ClosesSession()
     {
-        var skill = new HelloWorldSkill();
+        var skill = new HelloWorldSkill(new LoggerFactory());
         skill.LoadRequest(HelloWorldSampleQueries.CancelIntent);
         await skill.ProcessRequestAsync();
         

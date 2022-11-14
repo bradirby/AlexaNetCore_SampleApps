@@ -1,11 +1,12 @@
 ﻿using AlexaNetCore;
 using Interceptors.Interceptors;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.Interceptors
 {
     public class InterceptorSkill : AlexaSkillBase
     {
-        public InterceptorSkill()
+        public InterceptorSkill(ILoggerFactory loggerFactory):base(loggerFactory)
         {
             SetSkillVersion("0.3.0");
             SetInvocationName("alexanetcore interceptor demo");
@@ -27,8 +28,8 @@ namespace AlexaNetCore.ZeroToHero.Interceptors
 
             RegisterIntentHandler(new DefaultFallbackIntentHandler("Let me think about that.  Is there anything else?"));
 
-            RegisterRequestInterceptor(new FindUserRequestInterceptor(), 1000);
-            RegisterResponseInterceptor(new SetRepromptInterceptor("This is the injected reprompt."), 1000);
+            RegisterRequestInterceptor(new FindUserRequestInterceptor());
+            RegisterResponseInterceptor(new SetRepromptInterceptor("This is the injected reprompt."));
         }
     }
 }

@@ -5,15 +5,15 @@ using AlexaNetCore.Interfaces;
 
 namespace AlexaNetCore.ZeroToHero.Util
 {
-    public class ResponseValidationDebugInterceptor : IAlexaResponseInterceptor
+    public class ResponseValidationDebugInterceptor : AlexaBaseResponseInterceptor
     {
 
 
         /// <summary>
         /// This interceptor validates the response and throws an exception if any are found.
-        /// This is meant for use in Debug and unit tests
+        /// This is meant for use in LogDebug and unit tests
         /// </summary>
-        public Task<AlexaResponseEnvelope> ProcessAsync(AlexaRequestEnvelope reqEnv, AlexaResponseEnvelope respEnv)
+        public override Task ProcessAsync(IAlexaRequestEnvelope reqEnv, IAlexaResponseEnvelope respEnv)
         {
             //https://developer.amazon.com/en-US/docs/alexa/custom-skills/request-and-response-json-reference.html
             //When using the <audio> SSML tag:
@@ -27,7 +27,7 @@ namespace AlexaNetCore.ZeroToHero.Util
             var errLst = respEnv.Validate();
             if (errLst.Count > 0) throw new ValidationException( $"Found {errLst.Count} errors.  The first is: {errLst.First()}");
 
-            return Task.FromResult(respEnv);
+            return Task.CompletedTask;
         }
 
     }

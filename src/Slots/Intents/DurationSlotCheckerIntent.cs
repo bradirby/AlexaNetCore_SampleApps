@@ -25,10 +25,10 @@ namespace Slots.Intents
                     var connectorWord = "";
                     foreach (var alexaResponseSlotValue in slotVal.Values)
                     {
-                        sb.Append(connectorWord + AddSpaceBetweenEachLetter(alexaResponseSlotValue.Value) );
+                        sb.Append(connectorWord + AddSpaceBetweenEachLetter(alexaResponseSlotValue) );
                         connectorWord = ", and ";
                     }
-                    Speak($"I got {slotVal.Values.Count} values including {sb.ToString()}");
+                    Speak($"I got {slotVal.Values.ToList().Count} values including {sb.ToString()}");
                 }
                 else
                 {

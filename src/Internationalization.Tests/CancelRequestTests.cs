@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AlexaNetCore.Model;
 using Internationalization.Tests;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.Internationalization.Tests;
 
@@ -11,7 +12,7 @@ public class CancelRequestTests
    [Test]
     public async Task DefaultLanguage_SetsSpokenText()
     {
-        var skill = await new InternationalizationSkill()
+        var skill = await new InternationalizationSkill(new LoggerFactory())
             .LoadRequest(IntlSampleQueries.CancelIntent)
             .ProcessRequestAsync();
         Assert.AreEqual("Goodbye", skill.GetSpokenText());
@@ -21,8 +22,8 @@ public class CancelRequestTests
     [Test]
     public async Task SpecifyItalian_SetsSpokenText()
     {
-        var skill = await new InternationalizationSkill()
-            .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Italian), 1000)
+        var skill = await new InternationalizationSkill(new LoggerFactory())
+            .RegisterRequestInterceptor(new SetBaseRequestLanguageDebugInterceptor(AlexaLocale.Italian))
             .LoadRequest(IntlSampleQueries.CancelIntent)
             .ProcessRequestAsync();
 
@@ -37,7 +38,7 @@ public class CancelRequestTests
     [Test]
     public async Task DefaultLanguage_SetsRepromptText()
     {
-        var skill = await new InternationalizationSkill()
+        var skill = await new InternationalizationSkill(new LoggerFactory())
             .LoadRequest(IntlSampleQueries.CancelIntent)
             .ProcessRequestAsync();
 
@@ -48,8 +49,8 @@ public class CancelRequestTests
     [Test]
     public async Task SpecifyItalian_SetsRepromptText()
     {
-        var skill = await new InternationalizationSkill()
-            .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Italian), 1000)
+        var skill = await new InternationalizationSkill(new LoggerFactory())
+            .RegisterRequestInterceptor(new SetBaseRequestLanguageDebugInterceptor(AlexaLocale.Italian))
             .LoadRequest(IntlSampleQueries.CancelIntent)
             .ProcessRequestAsync();
         Assert.IsTrue(string.IsNullOrEmpty( skill.GetRepromptText()));
@@ -64,7 +65,7 @@ public class CancelRequestTests
     [Test]
     public async Task KeepsSessionOpen()
     {
-        var skill = await new InternationalizationSkill()
+        var skill = await new InternationalizationSkill(new LoggerFactory())
             .LoadRequest(IntlSampleQueries.CancelIntent)
             .ProcessRequestAsync();
         Assert.AreEqual(true, skill.ShouldEndSession);

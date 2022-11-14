@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
-using AlexaNetCore.ZeroToHero.Util;
+using DynamicEntities.Tests.TestData;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.DynamicEntities.Tests;
 
@@ -10,7 +11,7 @@ public class StopRequestTests
     [Test]
     public async Task SetsSpokenText()
     {
-        var skill = new DynamicEntitySkill();
+        var skill = new DynamicEntitySkill(new LoggerFactory());
         skill.LoadRequest(BuiltInIntentQueries.StopRequest);
         await skill.ProcessRequestAsync();
 
@@ -20,7 +21,7 @@ public class StopRequestTests
     [Test]
     public async Task HasNoRepromptText()
     {
-        var skill = new DynamicEntitySkill();
+        var skill = new DynamicEntitySkill(new LoggerFactory());
         skill.LoadRequest(BuiltInIntentQueries.StopRequest);
         await skill.ProcessRequestAsync();
 
@@ -30,7 +31,7 @@ public class StopRequestTests
     [Test]
     public async Task ClosesSession()
     {
-        var skill = new DynamicEntitySkill();
+        var skill = new DynamicEntitySkill(new LoggerFactory());
         skill.LoadRequest(BuiltInIntentQueries.StopRequest);
         await skill.ProcessRequestAsync();
 

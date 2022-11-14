@@ -1,10 +1,11 @@
 ﻿using AlexaNetCore;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.Internationalization
 {
     public class InternationalizationSkill : AlexaSkillBase
     {
-        public InternationalizationSkill()
+        public InternationalizationSkill(ILoggerFactory loggerFactory) : base(loggerFactory)
         {
             SetSkillVersion("0.2.0");
             SetInvocationName(Translations.SkillInvocation);

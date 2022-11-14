@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
-using AlexaNetCore.ZeroToHero.Util;
+using DynamicEntities.Tests.TestData;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.DynamicEntities.Tests
 {
@@ -22,7 +23,7 @@ namespace AlexaNetCore.ZeroToHero.DynamicEntities.Tests
         [Test]
         public async Task KeepsSessionOpen()
         {
-            var skill = new DynamicEntitySkill();
+            var skill = new DynamicEntitySkill(new LoggerFactory());
             skill.LoadRequest(BuiltInIntentQueries.LaunchRequest);
             await skill.ProcessRequestAsync();
 

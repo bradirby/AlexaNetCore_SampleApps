@@ -1,10 +1,11 @@
 ﻿using AlexaNetCore.Model;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.MultiturnDialog
 {
     public class MultiturnDialogSkill : AlexaSkillBase
     {
-        public MultiturnDialogSkill()
+        public MultiturnDialogSkill(ILoggerFactory loggerFactory) : base(loggerFactory)
         {
             SetSkillVersion("0.1.0");
             SetInvocationName("alexanetcore multiturn demo");

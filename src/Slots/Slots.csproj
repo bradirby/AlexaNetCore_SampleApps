@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -12,8 +12,11 @@
     <PublishReadyToRun>true</PublishReadyToRun>	  
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AlexaNetCore" Version="0.7.0.1" />
     <PackageReference Include="Amazon.Lambda.Core" Version="2.1.0" />
     <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0-rc.1.22426.10" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AlexaNetCore\src\AlexaNetCore\AlexaNetCore.csproj" />
   </ItemGroup>
 </Project>

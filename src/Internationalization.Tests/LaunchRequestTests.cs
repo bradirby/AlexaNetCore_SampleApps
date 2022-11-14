@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AlexaNetCore.Model;
 using Internationalization.Tests;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 
 namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
@@ -11,7 +12,7 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         [Test]
         public async Task DefaultLanguage_ReturnsProperTextString()
         {
-            var skill = await new InternationalizationSkill()
+            var skill = await new InternationalizationSkill(new LoggerFactory())
                 .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
             Assert.AreEqual("Welcome, say 'what languages are you trained with'.",
@@ -22,8 +23,8 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         [Test]
         public async Task SpecifyItalian_ReturnsProperTextString()
         {
-            var skill = await new InternationalizationSkill()
-                .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Italian), 1000)
+            var skill = await new InternationalizationSkill(new LoggerFactory())
+                .RegisterRequestInterceptor(new SetBaseRequestLanguageDebugInterceptor(AlexaLocale.Italian))
                 .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
 
@@ -34,8 +35,8 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         [Test]
         public async Task SpecifySpanish_ReturnsProperTextString()
         {
-            var skill = await new InternationalizationSkill()
-                .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Spanish_ES), 1000)
+            var skill = await new InternationalizationSkill(new LoggerFactory())
+                .RegisterRequestInterceptor(new SetBaseRequestLanguageDebugInterceptor(AlexaLocale.Spanish_ES))
                 .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
 
@@ -49,7 +50,7 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         [Test]
         public async Task DefaultLanguage_SetsRepromptText()
         {
-            var skill = await new InternationalizationSkill()
+            var skill = await new InternationalizationSkill(new LoggerFactory())
                 .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
             Assert.AreEqual("Did you need some help?", skill.GetRepromptText());
@@ -59,8 +60,8 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         [Test]
         public async Task SpecifyItalian_SetsRepromptText()
         {
-            var skill = await new InternationalizationSkill()
-                .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Italian), 1000)
+            var skill = await new InternationalizationSkill(new LoggerFactory())
+                .RegisterRequestInterceptor(new SetBaseRequestLanguageDebugInterceptor(AlexaLocale.Italian))
                 .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
 
@@ -70,8 +71,8 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         [Test]
         public async Task SpecifySpanish_SetsRepromptText()
         {
-            var skill = await new InternationalizationSkill()
-                .RegisterRequestInterceptor(new SetRequestLanguageDebugInterceptor(AlexaLocale.Spanish_ES), 1000)
+            var skill = await new InternationalizationSkill(new LoggerFactory())
+                .RegisterRequestInterceptor(new SetBaseRequestLanguageDebugInterceptor(AlexaLocale.Spanish_ES))
                 .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
 
@@ -85,7 +86,7 @@ namespace AlexaNetCore.ZeroToHero.Internationalization.Tests
         [Test]
         public async Task KeepsSessionOpen()
         {
-            var skill = await new InternationalizationSkill()
+            var skill = await new InternationalizationSkill(new LoggerFactory())
                 .LoadRequest(IntlSampleQueries.LaunchRequest)
                 .ProcessRequestAsync();
             Assert.AreEqual(false, skill.ShouldEndSession);

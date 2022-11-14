@@ -12,14 +12,16 @@
     "function-runtime" : "dotnet6",
     "function-memory-size" : 512,
     "function-timeout"     : 15,
-    "function-handler"     : "Step01_HelloWorld::Step01_HelloWorld.Function::FunctionHandler",
+    "function-handler"     : "HelloWorld::AlexaNetCore.ZeroToHero.HelloWorld.Function::FunctionHandler",
     "framework"            : "net6.0",
-    "function-name"        : "AlexaNetCoreGettingStarted",
+    "function-name"        : "AlexaNetCoreHelloWorld",
     "function-description" : "",
     "package-type"         : "Zip",
-    "function-role"        : "arn:aws:iam::886612113575:role/service-role/AlexaNetCoreGettingStarted-role-1go5ngrb",
+    "function-role"        : "arn:aws:iam::886612113575:role/service-role/AlexaNetCoreHelloWorld-role-6blqsmo3",
     "function-architecture" : "arm64",
     "tracing-mode"          : "PassThrough",
     "environment-variables" : "",
-    "image-tag"             : ""
+    "image-tag"             : "",
+    "function-subnets"      : "",
+    "function-security-groups" : ""
 }

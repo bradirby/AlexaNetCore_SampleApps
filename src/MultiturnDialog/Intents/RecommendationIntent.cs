@@ -20,32 +20,28 @@ public class RecommendationIntent : AlexaIntentHandlerBase
             .AddPromptVariation("Are you sure you want to go with this?"));
 
         AddSlot(new AlexaSlot(SkillConstants.SlotNames.TimeOfDay, SkillConstants.SlotTypes.TimeOfDay, false)
-            .MakeSlotRequired(new AlexaRequiredSlot()
-                .AddMissingValuePromptVariation("When did you want to eat?")
+            .MakeSlotRequired(new AlexaRequiredSlot("When did you want to eat?")
                 .AddMissingValuePromptVariation("Is this breakfast, lunch, or dinner?")
                 .AddUserUtterance($"I want {{{SkillConstants.SlotNames.TimeOfDay}}}")
                 .AddUserUtterance($"I'm jonesing for {{{SkillConstants.SlotNames.TimeOfDay}}}"))
             .SetSlotOrder(1));
 
         AddSlot(new AlexaSlot(SkillConstants.SlotNames.Allergies, SkillConstants.SlotTypes.Allergies, true)
-            .MakeSlotRequired(new AlexaRequiredSlot()
-                .AddMissingValuePromptVariation("Do you have allergies?")
+            .MakeSlotRequired(new AlexaRequiredSlot("Do you have allergies?")
                 .AddMissingValuePromptVariation("Is there anything we should avoid?")
                 .AddUserUtterance($"I am allergic to {{{SkillConstants.SlotNames.Allergies}}} ")
                 .AddUserUtterance($"I suffer from an allergy to {{{SkillConstants.SlotNames.Allergies}}}"))
             .SetSlotOrder(2));
 
         AddSlot(new AlexaSlot(SkillConstants.SlotNames.Cuisine, SkillConstants.SlotTypes.Cuisine, false)
-            .MakeSlotRequired(new AlexaRequiredSlot()
-                .AddMissingValuePromptVariation("I didn't get the cuisine")
+            .MakeSlotRequired(new AlexaRequiredSlot("I didn't get the cuisine")
                 .AddMissingValuePromptVariation("gimme a cuisine")
                 .AddUserUtterance($"I want {{{SkillConstants.SlotNames.Cuisine}}}")
                 .AddUserUtterance($"gimme something {{{SkillConstants.SlotNames.Cuisine}}}"))
             .SetSlotOrder(3));
 
         AddSlot(new AlexaSlot(SkillConstants.SlotNames.Dish, AlexaBuiltInSlotTypes.Food, false)
-            .MakeSlotRequired(new AlexaRequiredSlot()
-                .AddMissingValuePromptVariation("What type of food do you like")
+            .MakeSlotRequired(new AlexaRequiredSlot("What type of food do you like")
                 .AddMissingValuePromptVariation("What are you in the mood for?")
                 .AddMissingValuePromptVariation("And what are we eating today?")
                 .AddUserUtterance($"I want {{{SkillConstants.SlotNames.Dish}}}")
@@ -84,7 +80,7 @@ public class RecommendationIntent : AlexaIntentHandlerBase
     private string GetSpokenAllergyText()
     {
         var allergySlot = GetSlot(SkillConstants.SlotNames.Allergies);
-        var matchedAllergy = allergySlot.MatchedValues.FirstOrDefault();
+        var matchedAllergy = allergySlot.BestMatchedValues.FirstOrDefault();
         if (matchedAllergy != null)
         {
             if (matchedAllergy.Value.Id == "NONE") return "";
@@ -92,8 +88,8 @@ public class RecommendationIntent : AlexaIntentHandlerBase
         }
 
         //didn't match one of our specified values, to repeat what they said
-        if (allergySlot.SpokenValue == "") return "";
-        return $", but no {allergySlot.SpokenValue}, ";
+        if (allergySlot.Value == "") return "";
+        return $", but no {allergySlot.Value}, ";
 
     }
 }

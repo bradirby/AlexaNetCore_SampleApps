@@ -26,6 +26,7 @@
             public static string ActorNameSlotChecker => "actorNameSlotCheckerIntent";
             public static string AnimalSlotCheckerIntent => "AnimalSlotCheckerIntent";
             public static string BirthYear=> "BirthYearIntent";
+            public static string BirthYearMultipleValues => "BirthYearMultipleValues";
             public static string DateSlotChecker => "DateSlotCheckerIntent";
             public static string DurationSlotCheckerIntent => "DurationSlotCheckerIntent";
             public static string FourDigitlotCheckerIntent => "FourDigitNumberSlotCheckerIntent";

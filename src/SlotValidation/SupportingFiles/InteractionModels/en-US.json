@@ -1,0 +1,222 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "alexanetcore slot validation",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "BirthYearIntentWithValidation",
+          "slots": [
+            {
+              "name": "fourDigitNumSlot",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "samples": [
+            "Verify the year {fourDigitNumSlot}"
+          ]
+        },
+        {
+          "name": "BirthYearNoValidation",
+          "slots": [
+            {
+              "name": "fourDigitNumSlot",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "samples": [
+            "I was born in the year {fourDigitNumSlot}",
+            "I was born in {fourDigitNumSlot}",
+            "My birth year was {fourDigitNumSlot}"
+          ]
+        },
+        {
+          "name": "BirthYearRequiredNoValidation",
+          "slots": [
+            {
+              "name": "fourDigitNumSlot",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "samples": [
+              ]
+            }
+          ],
+          "samples": [
+            "I am required to say I was born in the year {fourDigitNumSlot}",
+            "I am required to say I was born in {fourDigitNumSlot}",
+            "I am required to say My birth year was {fourDigitNumSlot}"
+          ]
+        },
+        {
+          "name": "MultiYearNoValidation",
+          "slots": [
+            {
+              "name": "fourDigitNumSlot",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "multipleValues": {
+                "enabled": true
+              }
+            }
+          ],
+          "samples": [
+            "My kids were born in the years {fourDigitNumSlot}",
+            "My kids were born in {fourDigitNumSlot}",
+            "My kids birth years were {fourDigitNumSlot}"
+          ]
+        },
+        {
+          "name": "MultiYearWithValidation",
+          "slots": [
+            {
+              "name": "fourDigitNumSlot",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "multipleValues": {
+                "enabled": true
+              }
+            }
+          ],
+          "samples": [
+            "Verify all of the years {fourDigitNumSlot} "
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "delegationStrategy": "ALWAYS",
+      "intents": [
+        {
+          "name": "BirthYearIntentWithValidation",
+          "delegationStrategy": "ALWAYS",
+          "confirmationRequired": false,
+          "prompts": {
+          },
+          "slots": [
+            {
+              "name": "fourDigitNumSlot",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "e36d16f9-aae7-40a6-8521-48d6d81afbac",
+                  "values": [
+                    1950,
+                    1960
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MultiYearWithValidation",
+          "delegationStrategy": "ALWAYS",
+          "confirmationRequired": false,
+          "prompts": {
+          },
+          "slots": [
+            {
+              "name": "fourDigitNumSlot",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "0cb72e97-28eb-4b07-8106-bc6a14aa1514",
+                  "values": [
+                    1950,
+                    1960
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BirthYearRequiredNoValidation",
+          "delegationStrategy": "ALWAYS",
+          "confirmationRequired": false,
+          "prompts": {
+          },
+          "slots": [
+            {
+              "name": "fourDigitNumSlot",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "e53096c6-2f4a-4cf4-9f3b-43988a8749e1"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "e36d16f9-aae7-40a6-8521-48d6d81afbac",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sorry, only 1950 and 1960 allowed.  Try again"
+          }
+        ]
+      },
+      {
+        "id": "0cb72e97-28eb-4b07-8106-bc6a14aa1514",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sorry, all of the years must be 1950 or 1960.  Try again"
+          }
+        ]
+      },
+      {
+        "id": "e53096c6-2f4a-4cf4-9f3b-43988a8749e1",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What was the year?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Sorry, I didn\u0027t get the year"
+          },
+          {
+            "type": "PlainText",
+            "value": "Whoops, you forgot to tell me the year"
+          }
+        ]
+      }
+    ]
+  }
+}

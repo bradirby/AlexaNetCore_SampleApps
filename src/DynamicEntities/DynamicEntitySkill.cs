@@ -1,10 +1,11 @@
 ﻿using AlexaNetCore.Model;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.DynamicEntities
 {
     public class DynamicEntitySkill : AlexaSkillBase
     {
-        public DynamicEntitySkill()
+        public DynamicEntitySkill(ILoggerFactory loggerFactory) : base(loggerFactory)
         {
             SetSkillVersion("0.1.0");
             SetInvocationName("alexanetcore multiturn dialog demo");

@@ -1,12 +1,13 @@
 ﻿
 using AlexaNetCore;
+using Microsoft.Extensions.Logging;
 using Slots.Intents;
 
 namespace Slots
 {
     public class SlotCheckerSkill : AlexaSkillBase
     {
-        public SlotCheckerSkill()
+        public SlotCheckerSkill(ILoggerFactory loggerFactory):base(loggerFactory)
         {
             SetSkillVersion("0.3.0");
             SetInvocationName("alexanetcore slot value checker");
@@ -18,10 +19,10 @@ namespace Slots
 
 
             RegisterIntentHandler(new BirthYearIntent());
+            RegisterIntentHandler(new BirthYearIntentMultipleValues());
 
             //RegisterIntentHandler(new DateSlotIntent());
             //RegisterIntentHandler(new DurationSlotCheckerIntent());
-            //RegisterIntentHandler(new FourDigitNumberIntent());
             //RegisterIntentHandler(new NumberSlotCheckerIntent());
             //RegisterIntentHandler(new OrdinalSlotCheckerIntent());
             //RegisterIntentHandler(new PhoneNumberSlotCheckerIntent());

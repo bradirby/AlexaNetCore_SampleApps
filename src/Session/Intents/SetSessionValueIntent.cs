@@ -18,8 +18,8 @@ internal class SetSessionValueIntent: AlexaIntentHandlerBase
     {
         try
         {
-            var actorName = GetSlot(SkillConstants.SlotNames.ActorName).GetValueOrDefault( "unknown");
-            SetResponseSessionValue(SkillConstants.SessionValueNames.ActorName, actorName);
+            var actorName = GetSlotValue(SkillConstants.SlotNames.ActorName,  "unknown");
+            SetSessionValue(SkillConstants.SessionValueNames.ActorName, actorName);
             Speak($"Saving your actor name of {actorName}");
         }
         catch (Exception )

@@ -25,10 +25,10 @@ namespace Slots.Intents
                     var connectorWord = "";
                     foreach (var oneOfManyValues in slotVal.Values)
                     {
-                        sb.Append(connectorWord + AddSpaceBetweenEachLetter(oneOfManyValues.Value) );
+                        sb.Append(connectorWord + AddSpaceBetweenEachLetter(oneOfManyValues) );
                         connectorWord = ", and ";
                     }
-                    Speak($"I got {slotVal.Values.Count} values including {sb.ToString()}");
+                    Speak($"I got {slotVal.Values.ToList().Count} values including {sb.ToString()}");
                 }
                 else
                 {

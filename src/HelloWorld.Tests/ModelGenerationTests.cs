@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using AlexaNetCore;
 using AlexaNetCore.Model;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 
 namespace AlexaNetCore.ZeroToHero.HelloWorld.Tests
@@ -21,7 +22,7 @@ namespace AlexaNetCore.ZeroToHero.HelloWorld.Tests
             filePath ??= "";
             filePath = Path.Combine(filePath, "HelloWorld\\SupportingFiles\\InteractionModels");
 
-            var skill = new HelloWorldSkill();
+            var skill = new HelloWorldSkill(new LoggerFactory());
             
             var locale = AlexaLocale.English_US;
 

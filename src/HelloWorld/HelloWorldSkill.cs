@@ -1,13 +1,14 @@
 ﻿using AlexaNetCore;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.HelloWorld
 {
     public class HelloWorldSkill : AlexaSkillBase
     {
-        public HelloWorldSkill()
+        public HelloWorldSkill(ILoggerFactory loggerFactory) : base(loggerFactory)
         {
             SetSkillVersion("0.1.0");
-            SetInvocationName("alexanetcore getting started");
+            SetInvocationName("alexanetcore hello world");
 
             RegisterIntentHandler(new DefaultLaunchIntentHandler("I Love Alexa Net Core. Try saying 'How old is Dot Net Core' or 'When was Dot Net born'"));
 

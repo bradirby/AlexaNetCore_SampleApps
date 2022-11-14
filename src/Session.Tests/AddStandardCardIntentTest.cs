@@ -1,8 +1,7 @@
-﻿using NUnit.Framework;
-using System.Threading.Tasks;
-using AlexaNetCore.ZeroToHero.Util;
+﻿using System.Threading.Tasks;
+using NUnit.Framework;
 
-namespace AlexaNetCore.ZeroToHero.Session.Tests;
+namespace Session.Tests;
 
 internal class AddStandardCardIntentTest
 {

@@ -1,10 +1,10 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.Extensions.Logging;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AlexaNetCore.ZeroToHero.Util;
 
 namespace AlexaNetCore.ZeroToHero.HelloWorld.Tests
 {
@@ -14,7 +14,7 @@ namespace AlexaNetCore.ZeroToHero.HelloWorld.Tests
         [Test]
         public async Task TellMeHello_ResponseProperly()
         {
-            var skill = new HelloWorldSkill();
+            var skill = new HelloWorldSkill(new LoggerFactory());
             skill.LoadRequest(HelloWorldSampleQueries.WhenWasDotNetBorn);
             await skill.ProcessRequestAsync();
 

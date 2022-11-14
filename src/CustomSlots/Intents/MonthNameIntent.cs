@@ -16,8 +16,8 @@ namespace AlexaNetCore.ZeroToHero.CustomSlots
         {
             try
             {
-                var slotVal = GetAlexaSlot(SkillConstants.SlotNames.MonthNameSlotName);
-                Speak($"got the month name {slotVal.Value} with the key {slotVal.Id}");
+                var slot = GetAlexaSlot(SkillConstants.SlotNames.MonthNameSlotName);
+                Speak($"got the month name {slot.Value} with the key {slot.Value}");
             }
             catch (Exception )
             {

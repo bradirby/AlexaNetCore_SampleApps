@@ -33,6 +33,20 @@
           "slots": [
             {
               "name": "fourDigitNumSlot",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "samples": [
+            "I was born in the year {fourDigitNumSlot}",
+            "I was born in {fourDigitNumSlot}",
+            "My birth year was {fourDigitNumSlot}"
+          ]
+        },
+        {
+          "name": "BirthYearMultipleValues",
+          "slots": [
+            {
+              "name": "fourDigitNumSlot",
               "type": "AMAZON.FOUR_DIGIT_NUMBER",
               "multipleValues": {
                 "enabled": true
@@ -40,10 +54,9 @@
             }
           ],
           "samples": [
-            "I was born in the year {fourDigitNumSlot}",
-            "I was born in {fourDigitNumSlot}",
-            "My birth year was {fourDigitNumSlot}",
-            "The year of my birth was {fourDigitNumSlot}"
+            "My kids were born in the year {fourDigitNumSlot}",
+            "My kids were born in {fourDigitNumSlot}",
+            "My kids birth years were {fourDigitNumSlot}"
           ]
         }
       ]

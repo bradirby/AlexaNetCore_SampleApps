@@ -1,10 +1,11 @@
 ﻿using AlexaNetCore;
+using Microsoft.Extensions.Logging;
 
 namespace AlexaNetCore.ZeroToHero.Cards
 {
     public class CardDemoSkill : AlexaSkillBase
     {
-        public CardDemoSkill()
+        public CardDemoSkill(ILoggerFactory loggerFactory) : base(loggerFactory)
         {
             SetSkillVersion("0.3.0");
             SetInvocationName("alexanetcore card demo");
